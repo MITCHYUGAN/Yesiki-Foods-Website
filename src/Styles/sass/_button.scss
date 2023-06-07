@@ -1,0 +1,118 @@
+%button{
+    color: $white;
+    background-color: $purple;
+    border: none;
+    padding: 20px 27px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+%landingPageButtons{
+    @extend %button;
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    gap: 10px;
+    font-family: $jakartafont;
+    font-weight: $fontweight700;
+    font-size: $font20;
+}
+
+.sendMessageBtn{
+    @extend %button;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: $jakartafont;
+    transition: all 0.5s;
+}
+
+.sendMessageBtn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 3px 20px -8px #6000E8;
+}
+
+.navBtn{
+    @extend %button;
+    padding: 16px;
+    font-size: $font20;
+    font-family: $interfont;
+    transition: all 0.5s;
+}
+.navBtn:hover{
+    box-shadow: 0 3px 20px -8px #6000E8;
+}
+
+
+.makeOrderBtn{
+    @extend %landingPageButtons;
+    transition: all 0.5s;
+    
+}
+
+.makeOrderBtn:hover{
+    box-shadow: 0 3px 20px -8px #6000E8;
+    transform: translateY(-5px);
+}
+
+
+.viewMenuBtn{
+    @extend %landingPageButtons;
+    color: $purple;
+    background: $white;
+    border: 1px solid $purple;
+    transition: all 0.5s;
+}
+
+.viewMenuBtn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 3px 20px -8px #6000E8;
+}
+
+
+.bulkOrdersBtn{
+    @extend %landingPageButtons;
+    background: none;
+    border: 2px solid $white;
+    transition: all 0.5s;
+}
+
+.bulkOrdersBtn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 3px 20px -8px #6000E8;
+}
+
+
+
+@media (max-width: 1020px) {
+    .sendMessageBtn{
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 1055px) {
+    %landingPageButtons{
+        display: flex;
+        align-items: center;
+        padding: 16px 16px;
+        gap: 10px;
+        font-family: $interfont;
+        font-weight: $fontweight700;
+        font-size: $font20 - 3px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    %landingPageButtons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 10px;
+        gap: 10px;
+        font-family: $interfont;
+        font-weight: $fontweight700;
+        font-size: $font20 - 6px;
+    }
+
+}

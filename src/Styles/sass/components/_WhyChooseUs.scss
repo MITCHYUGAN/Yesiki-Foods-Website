@@ -1,0 +1,53 @@
+.whyChooseUsSection{
+    background-color: #FCFCFC;
+    margin-top: 50px;
+    width: 100%;
+    min-height: 215px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #F0E6FF;
+
+    .whyChooseUs{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+        font-family: $jakartafont;
+        padding: 30px 0px;
+
+
+        .fastFood, .swiftDelivery, .bulkOrders{
+            width: 300px;
+            display: flex;
+            align-items: flex-start;
+            gap: 34px;
+
+            .fastFoodIcon{
+                width: 40px;
+            }
+
+            .fastFoodTexts, .swiftDeliveryTexts, .bulkOrdersTexts{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h2{
+                    color: $Darkpurple;
+                    font-weight: $fontweight700;
+                    font-size: 28px;
+                }
+
+                p{
+                    font-weight: $fontweight400 - 100;
+                    font-size: 20px;
+                    line-height: 26.4px;
+                    color: $Darkpurple;
+                }
+            }
+        }
+        
+    }
+}

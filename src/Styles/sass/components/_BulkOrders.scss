@@ -1,0 +1,134 @@
+.bulkOrdersSection{
+    width: 100%;
+    min-height: 100vh;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+
+    .bulkOrders{
+        width: $websiteSize;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+
+        .bulkOrdersImg{
+            width: min(50%, 517px);
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .bulkOrdersContents{
+            width: min(500px, 60%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+
+            h1{
+                font-family: $interfont;
+                font-weight: 800;
+                font-size: 64px;
+                line-height: 120%;
+
+                span{
+                    color: $purple;
+                }
+            }
+
+            .bulkOrdersContentsParagraph{
+                font-family: $interfont;
+                font-weight: 400;
+                font-size: 28px;
+                line-height: 140%;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 830px) and (max-width: 1005px) {
+    .bulkOrdersSection{
+    
+        .bulkOrders{
+    
+            .bulkOrdersContents{
+    
+                h1{
+                    font-family: $interfont;
+                    font-weight: 800;
+                    font-size: 56px;
+                    line-height: 120%;
+                }
+    
+                .bulkOrdersContentsParagraph{
+                    font-family: $interfont;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 140%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 830px) {
+    .bulkOrdersSection{
+        position: relative;
+    
+        .bulkOrders{
+            flex-direction: column-reverse;
+            gap: 0px;
+
+            .bulkOrdersImg {
+                width: 40%;
+                align-self: flex-end;
+                margin-top: -100px;
+            }
+    
+            .bulkOrdersContents{
+                width: 90%;
+    
+                .bulkOrdersContentsParagraph{
+                    font-family: $interfont;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 140%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .bulkOrdersSection{
+        position: relative;
+        min-height: 65vh;
+        padding: 40px 0;
+    
+        .bulkOrders{
+            flex-direction: column-reverse;
+            gap: 0px;
+
+            .bulkOrdersImg {
+                display: none;
+            }
+    
+            .bulkOrdersContents{
+                width: 90%;
+    
+                .bulkOrdersContentsParagraph{
+                    font-family: $interfont;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 140%;
+                }
+            }
+        }
+    }
+}

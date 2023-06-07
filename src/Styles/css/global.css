@@ -1,0 +1,794 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.navBtn, .sendMessageBtn, .bulkOrdersBtn, .viewMenuBtn, .makeOrderBtn {
+  color: #FFFFFF;
+  background-color: #6000E8;
+  border: none;
+  padding: 20px 27px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.bulkOrdersBtn, .viewMenuBtn, .makeOrderBtn {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  gap: 10px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.sendMessageBtn {
+  font-weight: 700;
+  font-size: 40px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: all 0.5s;
+}
+
+.sendMessageBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 3px 20px -8px #6000E8;
+}
+
+.navBtn {
+  padding: 16px;
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  transition: all 0.5s;
+}
+
+.navBtn:hover {
+  box-shadow: 0 3px 20px -8px #6000E8;
+}
+
+.makeOrderBtn {
+  transition: all 0.5s;
+}
+
+.makeOrderBtn:hover {
+  box-shadow: 0 3px 20px -8px #6000E8;
+  transform: translateY(-5px);
+}
+
+.viewMenuBtn {
+  color: #6000E8;
+  background: #FFFFFF;
+  border: 1px solid #6000E8;
+  transition: all 0.5s;
+}
+
+.viewMenuBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 3px 20px -8px #6000E8;
+}
+
+.bulkOrdersBtn {
+  background: none;
+  border: 2px solid #FFFFFF;
+  transition: all 0.5s;
+}
+
+.bulkOrdersBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 3px 20px -8px #6000E8;
+}
+
+@media (max-width: 1020px) {
+  .sendMessageBtn {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1055px) {
+  .makeOrderBtn, .viewMenuBtn, .bulkOrdersBtn {
+    display: flex;
+    align-items: center;
+    padding: 16px 16px;
+    gap: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+  }
+}
+@media (max-width: 480px) {
+  .makeOrderBtn, .viewMenuBtn, .bulkOrdersBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+    gap: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: fixed;
+  background: #FFFFFF;
+  z-index: 100;
+}
+header .headerSection {
+  width: 88%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .headerSection .logo {
+  width: 100px;
+}
+header .headerSection .nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+header .headerSection .nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .headerSection .nav ul li a {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #0A0000;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+header .headerSection .nav ul li a:hover {
+  color: #6000E8;
+}
+header .headerSection .nav ul li::after {
+  display: block;
+  content: "";
+  margin-top: 4px;
+  width: 0%;
+  height: 2px;
+  background-color: #6000E8;
+  transition: width 0.3s;
+}
+header .headerSection .nav ul li:hover::after {
+  width: 100%;
+}
+header .headerSection .menuBtn {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 901px) {
+  header .headerSection .nav {
+    width: 250px;
+    flex-direction: column;
+    height: 55vh;
+    position: fixed;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 11px 0px rgba(96, 0, 232, 0.4784313725);
+    top: 15%;
+    justify-content: center;
+    right: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+  header .headerSection .nav ul {
+    flex-direction: column;
+  }
+  header .headerSection .navOpen {
+    max-height: 600px;
+  }
+  header .headerSection .navClose {
+    max-height: 0px;
+    transition: max-height 0.5s;
+  }
+  header .headerSection .menuBtn {
+    display: block;
+  }
+}
+@font-face {
+  font-family: "mazzard";
+  src: url("../../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf");
+}
+.landingPageSection {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.landingPageSection .landingPage {
+  min-height: 100vh;
+  margin-top: 50px;
+  width: 88%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.landingPageSection .landingPage .landingPageContents {
+  width: 656px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+.landingPageSection .landingPage .landingPageContents .landingPageHeadingText {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: black;
+  font-size: 52px;
+  line-height: 72px;
+}
+.landingPageSection .landingPage .landingPageContents .landingPageHeadingText span {
+  color: #6000E8;
+}
+.landingPageSection .landingPage .landingPageContents .landingPageParagraph {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  line-height: 28px;
+}
+.landingPageSection .landingPage .landingPageContents .landingButtons {
+  display: flex;
+  margin-top: 28px;
+  gap: 40px;
+}
+
+@media (min-width: 970px) and (max-width: 1055px) {
+  .landingPageSection .landingPage .landingPageContents .landingPageHeadingText {
+    font-size: 47px;
+    line-height: 68px;
+  }
+  .landingPageSection .landingPage .landingPageContents .landingPageParagraph {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    line-height: 28px;
+  }
+  .landingPageSection .landingPage .landingPageContents .landingButtons {
+    display: flex;
+    margin-top: 20px;
+    gap: 40px;
+  }
+}
+@media (max-width: 970px) {
+  .landingPageSection .landingPage .landingPageImg {
+    display: none;
+  }
+}
+@media (max-width: 530px) {
+  .landingPageSection .landingPage .landingPageContents .landingPageHeadingText {
+    font-size: 47px;
+    line-height: 68px;
+  }
+  .landingPageSection .landingPage .landingPageContents .landingPageParagraph {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .landingPageSection .landingPage .landingPageContents .landingButtons {
+    gap: 30px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .landingPageSection .landingPage .landingPageContents .landingPageHeadingText {
+    font-size: 39px;
+    line-height: 55px;
+  }
+  .landingPageSection .landingPage .landingPageContents .landingPageParagraph {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    line-height: 28px;
+  }
+  .landingPageSection .landingPage .landingPageContents .landingButtons {
+    gap: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .landingPageSection .landingPage .landingPageContents .landingPageHeadingText {
+    font-size: 34px;
+    line-height: 50px;
+  }
+  .landingPageSection .landingPage .landingPageContents .landingPageParagraph {
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    line-height: 24px;
+  }
+}
+@media (max-width: 395px) {
+  .landingPageSection .landingPage .landingPageContents .landingButtons {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+}
+.whyChooseUsSection {
+  background-color: #FCFCFC;
+  margin-top: 50px;
+  width: 100%;
+  min-height: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #F0E6FF;
+}
+.whyChooseUsSection .whyChooseUs {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 30px 0px;
+}
+.whyChooseUsSection .whyChooseUs .fastFood, .whyChooseUsSection .whyChooseUs .swiftDelivery, .whyChooseUsSection .whyChooseUs .bulkOrders {
+  width: 300px;
+  display: flex;
+  align-items: flex-start;
+  gap: 34px;
+}
+.whyChooseUsSection .whyChooseUs .fastFood .fastFoodIcon, .whyChooseUsSection .whyChooseUs .swiftDelivery .fastFoodIcon, .whyChooseUsSection .whyChooseUs .bulkOrders .fastFoodIcon {
+  width: 40px;
+}
+.whyChooseUsSection .whyChooseUs .fastFood .fastFoodTexts, .whyChooseUsSection .whyChooseUs .fastFood .swiftDeliveryTexts, .whyChooseUsSection .whyChooseUs .fastFood .bulkOrdersTexts, .whyChooseUsSection .whyChooseUs .swiftDelivery .fastFoodTexts, .whyChooseUsSection .whyChooseUs .swiftDelivery .swiftDeliveryTexts, .whyChooseUsSection .whyChooseUs .swiftDelivery .bulkOrdersTexts, .whyChooseUsSection .whyChooseUs .bulkOrders .fastFoodTexts, .whyChooseUsSection .whyChooseUs .bulkOrders .swiftDeliveryTexts, .whyChooseUsSection .whyChooseUs .bulkOrders .bulkOrdersTexts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.whyChooseUsSection .whyChooseUs .fastFood .fastFoodTexts h2, .whyChooseUsSection .whyChooseUs .fastFood .swiftDeliveryTexts h2, .whyChooseUsSection .whyChooseUs .fastFood .bulkOrdersTexts h2, .whyChooseUsSection .whyChooseUs .swiftDelivery .fastFoodTexts h2, .whyChooseUsSection .whyChooseUs .swiftDelivery .swiftDeliveryTexts h2, .whyChooseUsSection .whyChooseUs .swiftDelivery .bulkOrdersTexts h2, .whyChooseUsSection .whyChooseUs .bulkOrders .fastFoodTexts h2, .whyChooseUsSection .whyChooseUs .bulkOrders .swiftDeliveryTexts h2, .whyChooseUsSection .whyChooseUs .bulkOrders .bulkOrdersTexts h2 {
+  color: #3A008C;
+  font-weight: 700;
+  font-size: 28px;
+}
+.whyChooseUsSection .whyChooseUs .fastFood .fastFoodTexts p, .whyChooseUsSection .whyChooseUs .fastFood .swiftDeliveryTexts p, .whyChooseUsSection .whyChooseUs .fastFood .bulkOrdersTexts p, .whyChooseUsSection .whyChooseUs .swiftDelivery .fastFoodTexts p, .whyChooseUsSection .whyChooseUs .swiftDelivery .swiftDeliveryTexts p, .whyChooseUsSection .whyChooseUs .swiftDelivery .bulkOrdersTexts p, .whyChooseUsSection .whyChooseUs .bulkOrders .fastFoodTexts p, .whyChooseUsSection .whyChooseUs .bulkOrders .swiftDeliveryTexts p, .whyChooseUsSection .whyChooseUs .bulkOrders .bulkOrdersTexts p {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26.4px;
+  color: #3A008C;
+}
+
+.viewMenuSection {
+  min-height: 100vh;
+  background-color: black;
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+.viewMenuSection .viewMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 88%;
+}
+.viewMenuSection .viewMenu .viewMenuContents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.viewMenuSection .viewMenu .viewMenuContents h1 {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 140%;
+}
+.viewMenuSection .viewMenu .viewMenuContents h1 span {
+  color: #8c40f7;
+}
+.viewMenuSection .viewMenu .viewMenuContents .viewMenuContentsParagraph {
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 140%;
+  margin-bottom: 20px;
+  width: 550px;
+}
+
+@media (max-width: 650px) {
+  .viewMenuSection .viewMenu {
+    position: relative;
+  }
+  .viewMenuSection .viewMenu .viewMenuContents {
+    z-index: 2;
+  }
+  .viewMenuSection .viewMenu .viewMenuContents h1 {
+    font-size: 50px;
+    line-height: 80px;
+  }
+  .viewMenuSection .viewMenu .viewMenuContents .viewMenuContentsParagraph {
+    font-size: 25px;
+    width: min(550px, 100%);
+  }
+  .viewMenuSection .viewMenu .viewMenuImg {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    opacity: 10%;
+  }
+}
+.OrderFoodOnTheGoSection {
+  width: 100%;
+  min-height: 120vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 30px 0px;
+}
+.OrderFoodOnTheGoSection .OrderFoodSectionHeading {
+  position: relative;
+}
+.OrderFoodOnTheGoSection .OrderFoodSectionHeading h1 {
+  padding-bottom: 40px;
+  letter-spacing: 0.05em;
+  font-weight: 800;
+  font-size: 40px;
+  font-family: "Inter", sans-serif;
+  color: #3A008C;
+}
+.OrderFoodOnTheGoSection .OrderFoodSectionHeading img {
+  position: absolute;
+  bottom: 0;
+  right: -60px;
+}
+.OrderFoodOnTheGoSection .OrderFoodOnTheGo {
+  width: 88%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper {
+  position: relative;
+  width: 360px;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper img, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper img, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper img {
+  position: absolute;
+  width: 200px;
+  align-self: flex-start;
+}
+.OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .breakfast, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .lunch, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .dinner, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .breakfast, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .lunch, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .dinner, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .breakfast, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .lunch, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .dinner {
+  width: 100%;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 48px;
+  background: #FFFFFF;
+  border: 2px solid #E9E9E9;
+  box-shadow: 4px 16px 28px rgba(0, 0, 0, 0.06);
+  border-radius: 32px;
+  padding: 40px 32px;
+}
+.OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .breakfastTexts, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .lunchTexts, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .dinnerTexts, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .breakfastTexts, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .lunchTexts, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .dinnerTexts, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .breakfastTexts, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .lunchTexts, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .dinnerTexts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .breakfastTexts h2, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .lunchTexts h2, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .dinnerTexts h2, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .breakfastTexts h2, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .lunchTexts h2, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .dinnerTexts h2, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .breakfastTexts h2, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .lunchTexts h2, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .dinnerTexts h2 {
+  font-weight: 700;
+  font-size: 40px;
+  font-family: "Inter", sans-serif;
+}
+.OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .breakfastTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .lunchTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .dinnerTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .breakfastTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .lunchTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .dinnerTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .breakfastTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .lunchTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .dinnerTexts p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 140%;
+}
+
+@media (max-width: 615px) {
+  .OrderFoodOnTheGoSection .OrderFoodSectionHeading h1 {
+    font-size: 30px;
+  }
+  .OrderFoodOnTheGoSection .OrderFoodSectionHeading img {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+  }
+}
+@media (max-width: 400px) {
+  .OrderFoodOnTheGoSection .OrderFoodSectionHeading h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .OrderFoodOnTheGoSection .OrderFoodSectionHeading img {
+    display: none;
+  }
+  .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper img, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper img, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper img {
+    width: 170px;
+  }
+  .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .breakfastTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .lunchTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .breakfastWrapper .dinnerTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .breakfastTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .lunchTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .lunchWrapper .dinnerTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .breakfastTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .lunchTexts p, .OrderFoodOnTheGoSection .OrderFoodOnTheGo .dinnerWrapper .dinnerTexts p {
+    font-size: 23px;
+  }
+}
+.bulkOrdersSection {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+.bulkOrdersSection .bulkOrders {
+  width: 88%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.bulkOrdersSection .bulkOrders .bulkOrdersImg {
+  width: min(50%, 517px);
+}
+.bulkOrdersSection .bulkOrders .bulkOrdersImg img {
+  width: 100%;
+}
+.bulkOrdersSection .bulkOrders .bulkOrdersContents {
+  width: min(500px, 60%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+.bulkOrdersSection .bulkOrders .bulkOrdersContents h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 120%;
+}
+.bulkOrdersSection .bulkOrders .bulkOrdersContents h1 span {
+  color: #6000E8;
+}
+.bulkOrdersSection .bulkOrders .bulkOrdersContents .bulkOrdersContentsParagraph {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+}
+
+@media (min-width: 830px) and (max-width: 1005px) {
+  .bulkOrdersSection .bulkOrders .bulkOrdersContents h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 120%;
+  }
+  .bulkOrdersSection .bulkOrders .bulkOrdersContents .bulkOrdersContentsParagraph {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+  }
+}
+@media (max-width: 830px) {
+  .bulkOrdersSection {
+    position: relative;
+  }
+  .bulkOrdersSection .bulkOrders {
+    flex-direction: column-reverse;
+    gap: 0px;
+  }
+  .bulkOrdersSection .bulkOrders .bulkOrdersImg {
+    width: 40%;
+    align-self: flex-end;
+    margin-top: -100px;
+  }
+  .bulkOrdersSection .bulkOrders .bulkOrdersContents {
+    width: 90%;
+  }
+  .bulkOrdersSection .bulkOrders .bulkOrdersContents .bulkOrdersContentsParagraph {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+  }
+}
+@media (max-width: 550px) {
+  .bulkOrdersSection {
+    position: relative;
+    min-height: 65vh;
+    padding: 40px 0;
+  }
+  .bulkOrdersSection .bulkOrders {
+    flex-direction: column-reverse;
+    gap: 0px;
+  }
+  .bulkOrdersSection .bulkOrders .bulkOrdersImg {
+    display: none;
+  }
+  .bulkOrdersSection .bulkOrders .bulkOrdersContents {
+    width: 90%;
+  }
+  .bulkOrdersSection .bulkOrders .bulkOrdersContents .bulkOrdersContentsParagraph {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+  }
+}
+.questionSections {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url(https://images.pexels.com/photos/17144665/pexels-photo-17144665.png);
+  background-size: cover;
+}
+.questionSections .question {
+  width: 88%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.questionSections .question .questionContents {
+  display: flex;
+  flex-direction: column;
+  width: min(606px, 50%);
+  align-items: flex-start;
+  gap: 30px;
+}
+.questionSections .question .questionContents h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+.questionSections .question .questionImg {
+  width: min(627px, 50%);
+}
+.questionSections .question .questionImg img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 1020px) {
+  .questionSections .question .questionContents {
+    margin-top: -40px;
+  }
+  .questionSections .question .questionContents h1 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 150%;
+    color: #FFFFFF;
+  }
+  .questionSections .question .questionImg {
+    width: min(627px, 50%);
+  }
+  .questionSections .question .questionImg img {
+    width: 100%;
+    display: block;
+  }
+}
+@media (max-width: 855px) {
+  .questionSections {
+    min-height: 95vh;
+  }
+  .questionSections .question {
+    flex-direction: column;
+  }
+  .questionSections .question .questionContents {
+    margin-top: -40px;
+    width: 100%;
+  }
+  .questionSections .question .questionImg {
+    width: min(627px, 50%);
+    align-self: flex-end;
+  }
+  .questionSections .question .questionImg img {
+    width: 100%;
+    display: block;
+  }
+}
+@media (max-width: 450px) {
+  .questionSections {
+    min-height: 70vh;
+    align-items: center;
+  }
+  .questionSections .question {
+    flex-direction: column;
+  }
+  .questionSections .question .questionContents {
+    margin-top: 0px;
+  }
+  .questionSections .question .questionContents h1 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 150%;
+    color: #FFFFFF;
+  }
+  .questionSections .question .questionImg {
+    display: none;
+  }
+}
+.footerSection {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: #FFFFFF;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 40px 0px;
+}
+.footerSection .footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 88%;
+  row-gap: 80px;
+}
+.footerSection .footer .footerdiv1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  width: 350px;
+}
+.footerSection .footer .footerdiv1 h1 {
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 120%;
+}
+.footerSection .footer .footerdiv1 h1 span {
+  color: #6000E8;
+}
+.footerSection .footer .footerdiv1 p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+}
+.footerSection .footer .footerservice, .footerSection .footer .footercompany, .footerSection .footer .footersocials {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 200px;
+}
+.footerSection .footer .footerservice ul, .footerSection .footer .footercompany ul, .footerSection .footer .footersocials ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.footerSection .footer .footerservice ul li a, .footerSection .footer .footercompany ul li a, .footerSection .footer .footersocials ul li a {
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 20px;
+  transition: 0.5s;
+}
+.footerSection .footer .footerservice ul li a:hover, .footerSection .footer .footercompany ul li a:hover, .footerSection .footer .footersocials ul li a:hover {
+  color: #6000E8;
+}
+
+/*# sourceMappingURL=global.css.map */

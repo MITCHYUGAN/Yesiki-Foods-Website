@@ -1,0 +1,104 @@
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: $jakartafont;
+    position: fixed;
+    background: $white;
+    z-index: 100;
+
+    .headerSection{
+        width: $websiteSize;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        .logo{
+            width: 100px;
+        }
+
+        .nav{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            ul{
+                display: flex;
+                align-items: center;
+                gap: 20px; 
+
+                li{
+                    a{
+                        font-family: $jakartafont;
+                        color: #0A0000;
+                        font-size: $font20;
+                        letter-spacing: 0.5px;
+                        font-weight: $fontweight400;
+                    }
+                    a:hover{
+                        color: $purple;
+                    }
+                    &::after{
+                        display: block;
+                        content: "";
+                        margin-top: 4px;
+                        width: 0%;
+                        height: 2px;
+                        background-color: $purple;
+                        transition: width 0.3s;
+                    }
+                    &:hover::after{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .menuBtn{
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+@media (max-width: 901px) {
+    header{
+    
+        .headerSection{
+    
+            .nav{
+                width: 250px;
+                flex-direction: column;
+                height: 55vh;
+                position: fixed;
+                background-color: $white;
+                box-shadow: 0 0 11px 0px #6000e87a;
+                top: 15%;
+                justify-content: center;
+                right: 20px;
+                border-radius: 8px;
+                overflow: hidden;
+                transition: max-height 0.5s;
+    
+                ul{
+                    flex-direction: column;
+                }
+            }
+            .navOpen{
+                max-height: 600px;
+            }
+            .navClose{
+                max-height: 0px;
+                transition: max-height 0.5s;
+            }
+            
+            .menuBtn{
+                display: block;
+            }
+        }
+    }
+}

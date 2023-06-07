@@ -1,0 +1,119 @@
+.questionSections{
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    // background: #21014f;
+    background-image: url(https://images.pexels.com/photos/17144665/pexels-photo-17144665.png);
+    background-size: cover;
+
+    .question{
+        width: $websiteSize;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .questionContents{
+            display: flex;
+            flex-direction: column;
+            width: min(606px, 50%);
+            align-items: flex-start;
+            gap: 30px;
+
+            h1{
+                font-family: $jakartafont;
+                font-weight: 700;
+                font-size: 60px;
+                line-height: 150%;
+                color: $white;
+            }
+        }
+
+        .questionImg{
+            width: min(627px, 50%);
+
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+    .questionSections{
+        .question{
+    
+            .questionContents{
+                margin-top: -40px;
+
+                h1{
+                    font-family: $jakartafont;
+                    font-weight: 700;
+                    font-size: 50px;
+                    line-height: 150%;
+                    color: $white;
+                }
+            }
+    
+            .questionImg{
+                width: min(627px, 50%);
+    
+                img{
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 855px) {
+    .questionSections{
+        min-height: 95vh;
+        .question{
+            flex-direction: column;
+    
+            .questionContents{
+                margin-top: -40px;
+                width: 100%;
+            }
+    
+            .questionImg{
+                width: min(627px, 50%);
+                align-self: flex-end;
+                img{
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .questionSections{
+        min-height: 70vh;
+        align-items: center;
+        .question{
+            flex-direction: column;
+    
+            .questionContents{
+                margin-top: 0px;
+
+                h1{
+                    font-family: $jakartafont;
+                    font-weight: 700;
+                    font-size: 45px;
+                    line-height: 150%;
+                    color: $white;
+                }
+            }
+    
+            .questionImg{
+                display: none;
+            }
+        }
+    }
+}
