@@ -201,13 +201,13 @@ header .headerSection .menuBtn {
 }
 .landingPageSection {
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 .landingPageSection .landingPage {
-  min-height: 100vh;
+  min-height: 80vh;
   margin-top: 50px;
   width: 88%;
   display: flex;
@@ -314,7 +314,7 @@ header .headerSection .menuBtn {
 }
 .whyChooseUsSection {
   background-color: #FCFCFC;
-  margin-top: 50px;
+  margin-top: 10px;
   width: 100%;
   min-height: 215px;
   display: flex;
@@ -359,9 +359,9 @@ header .headerSection .menuBtn {
 }
 
 .viewMenuSection {
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: black;
-  margin-top: 100px;
+  margin-top: 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -423,7 +423,7 @@ header .headerSection .menuBtn {
 }
 .OrderFoodOnTheGoSection {
   width: 100%;
-  min-height: 120vh;
+  min-height: 100vh;
   background-color: white;
   display: flex;
   align-items: center;
@@ -529,7 +529,7 @@ header .headerSection .menuBtn {
 }
 .bulkOrdersSection {
   width: 100%;
-  min-height: 100vh;
+  min-height: 70vh;
   background-color: black;
   display: flex;
   align-items: center;
@@ -633,7 +633,7 @@ header .headerSection .menuBtn {
   }
 }
 .questionSections {
-  min-height: 70vh;
+  min-height: 80vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -731,7 +731,7 @@ header .headerSection .menuBtn {
   }
 }
 .footerSection {
-  min-height: 70vh;
+  min-height: 40vh;
   width: 100%;
   display: flex;
   align-items: center;

@@ -5,13 +5,13 @@
 
 .landingPageSection{
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 
     .landingPage{
-        min-height: 100vh;
+        min-height: 80vh;
         margin-top: 50px;
         width: $websiteSize;
         display: flex;
