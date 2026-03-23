@@ -1,5 +1,5 @@
 .questionSections{
-    min-height: 80vh;
+    min-height: 60vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -71,7 +71,6 @@
 
 @media (max-width: 855px) {
     .questionSections{
-        min-height: 95vh;
         .question{
             flex-direction: column;
     
@@ -94,7 +93,6 @@
 
 @media (max-width: 450px) {
     .questionSections{
-        min-height: 70vh;
         align-items: center;
         .question{
             flex-direction: column;

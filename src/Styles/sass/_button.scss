@@ -54,13 +54,13 @@
     transform: translateY(-5px);
 }
 
-
 .viewMenuBtn{
     @extend %landingPageButtons;
     color: $purple;
     background: $white;
     border: 1px solid $purple;
     transition: all 0.5s;
+    width: 100%;
 }
 
 .viewMenuBtn:hover{

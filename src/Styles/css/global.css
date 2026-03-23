@@ -63,6 +63,7 @@
   background: #FFFFFF;
   border: 1px solid #6000E8;
   transition: all 0.5s;
+  width: 100%;
 }
 
 .viewMenuBtn:hover {
@@ -333,7 +334,7 @@ header .headerSection .menuBtn {
   padding: 30px 0px;
 }
 .whyChooseUsSection .whyChooseUs .fastFood, .whyChooseUsSection .whyChooseUs .swiftDelivery, .whyChooseUsSection .whyChooseUs .bulkOrders {
-  width: 300px;
+  width: 400px;
   display: flex;
   align-items: flex-start;
   gap: 34px;
@@ -550,7 +551,7 @@ header .headerSection .menuBtn {
   width: 100%;
 }
 .bulkOrdersSection .bulkOrders .bulkOrdersContents {
-  width: min(500px, 60%);
+  width: min(650px, 60%);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -633,7 +634,7 @@ header .headerSection .menuBtn {
   }
 }
 .questionSections {
-  min-height: 80vh;
+  min-height: 60vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -689,9 +690,6 @@ header .headerSection .menuBtn {
   }
 }
 @media (max-width: 855px) {
-  .questionSections {
-    min-height: 95vh;
-  }
   .questionSections .question {
     flex-direction: column;
   }
@@ -710,7 +708,6 @@ header .headerSection .menuBtn {
 }
 @media (max-width: 450px) {
   .questionSections {
-    min-height: 70vh;
     align-items: center;
   }
   .questionSections .question {
