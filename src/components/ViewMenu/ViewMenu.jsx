@@ -11,10 +11,12 @@ const ViewMenu = () => {
             <span>Browse</span> our food menu now
           </h1>
           <p className="viewMenuContentsParagraph">See What&apos;s Cooking From rice dishes to grilled meats and cold drinks — browse our full menu, check prices, and order exactly what you want.</p>
-          <button className="makeOrderBtn">
-            <img src={menu} alt="Menu Icon" />
-            <p>View our Menu</p>
-          </button>
+          <a href="/menu">
+            <button className="makeOrderBtn">
+              <img src={menu} alt="Menu Icon" />
+              <p>View our Menu</p>
+            </button>
+          </a>
         </div>
         <div className="viewMenuImg">
           <img src={threeplates} alt="View Menu Img" />

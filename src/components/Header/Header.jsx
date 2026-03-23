@@ -14,10 +14,7 @@ const Header = () => {
                             <a href="">Home</a>
                         </li>
                         <li>
-                            <a href="">Menu</a>
-                        </li>
-                        <li>
-                            <a href="">Meals</a>
+                            <a href="/menu">Menu</a>
                         </li>
                         <li>
                             <a href="">Bulk Orders</a>
