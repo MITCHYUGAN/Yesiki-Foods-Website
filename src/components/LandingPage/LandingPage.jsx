@@ -8,13 +8,10 @@ const LandingPage = () =>{
             <div className="landingPage">
                 <div className="landingPageContents">
                     <h1 className="landingPageHeadingText">
-                        <span>Delicious</span> Fast Food, Delivered Right to Your Door
+                        <span>Fresh</span> Taste. <span>Fast</span> Delivery. Right to You.
                     </h1>
                     <p className="landingPageParagraph">
-                        Ready for something different? Our fast food service 
-                        takes your favorite classics and adds a little something extra,
-                         whether it&apos;s a unique twist on a burger or a salad that&apos;s anything but boring. 
-                         But don&apos;t worry, we haven&apos;t forgotten what makes fast food great: convenience and speed.
+                        From jollof rice to grilled chicken, we bring Lagos flavor straight to your door. No stress, no long wait — just good food, done right.
                     </p>
                     <div className="landingButtons">
                         <button className="makeOrderBtn">

@@ -16,7 +16,7 @@ const OrderFoodOnTheGo = () => {
                     <div className="breakfast">
                         <div className="breakfastTexts">
                             <h2>BreakFast</h2>
-                            <p>Best foods and meals of the day which would aid growth and best feeling all through the day</p>
+                            <p>Start your day right. Hot, fresh breakfast options ready to fuel your morning — from light bites to full meals.</p>
                         </div>
                     </div>
                </div>
@@ -25,7 +25,7 @@ const OrderFoodOnTheGo = () => {
                 <div className="lunch">
                     <div className="lunchTexts">
                         <h2>Lunch</h2>
-                        <p>Best foods and meals of the day which would aid growth and best feeling all through the day</p>
+                        <p>Midday hunger sorted. Rice, proteins, sides and more — everything you need to power through the rest of your day.</p>
                     </div>
                 </div>
               </div>
@@ -34,7 +34,7 @@ const OrderFoodOnTheGo = () => {
                 <div className="dinner">
                         <div className="dinnerTexts">
                             <h2>Dinner</h2>
-                            <p>Best foods and meals of the day which would aid growth and best feeling all through the day</p>
+                            <p>End your day deliciously. Warm, satisfying dinner options delivered to you so you can relax and enjoy.</p>
                         </div>
                     </div>
                </div>
