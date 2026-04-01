@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
 
   .menuHeader {
     width: 100%;
@@ -13,56 +12,132 @@
     place-items: center;
     margin-top: 100px;
 
-    .menuHeaderh1 {
-      font-size: $font40;
-      font-family: $jakartafont;
+    .menuHeaderTexts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      .menuHeaderTextsfirstP {
+        color: $purple;
+      }
+
+      .menuHeaderTextsP {
+        color: #808080;
+      }
+
+      .menuHeaderh1 {
+        font-size: $font40;
+        font-family: $jakartafont;
+      }
     }
   }
 
   .menuContent {
     display: flex;
     flex-direction: column;
-    min-height: 80vh;
-    width: min(1600px, 90%);
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 
-    .menuContentFilter {
-      display: flex;
-      gap: 10px;
-      align-self: center;
+    .menuContentFilterWrapper {
+      position: sticky;
+      top: 99px;
+      min-height: 100px;
+      background-color: white;
+      display: grid;
+      place-items: center;
+      width: 100%;
+
+      .menuContentFilter {
+        display: flex;
+        gap: 10px;
+        align-self: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
     }
 
-    .menuContentGrid {
-      margin-top: 100px;
+    .all_items {
+      margin-top: 50px;
       display: flex;
       gap: 30px;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
 
-      .menuContentCard {
+      .item {
         display: flex;
-        gap: 10px;
+        gap: 20px;
         // flex-direction: column;
         border: 1px solid rgb(206, 206, 206);
         // padding: 10px;
         border-radius: 10px;
-        width: 450px;
-        max-height: 200px;
+        width: min(450px, 95%);
+        min-height: 200px;
         align-items: center;
         overflow: hidden;
 
-        .menuContentCardImg {
+        .item_img {
           max-width: 200px;
           max-height: 200px;
           border-top-left-radius: 10px;
           border-bottom-left-radius: 10px;
+          width: 50%;
 
           img {
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
             width: 100%;
             height: 100%;
+          }
+        }
+
+        .item_content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 30px;
+          width: 50%;
+          margin-right: 20px;
+
+          .item_name {
+            font-size: 20px;
+            font-family: $jakartafont;
+          }
+
+          .item_buttons {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+
+            .item_order_now_btn {
+              @extend %button;
+              font-size: 17px;
+
+              background: none;
+              color: $purple;
+            }
+
+            .item_order_now_btn::after {
+              display: block;
+              content: "";
+              margin-top: 4px;
+              width: 0%;
+              height: 2px;
+              background-color: $purple;
+              transition: width 0.3s;
+            }
+            .item_order_now_btn:hover::after {
+              width: 100%;
+            }
+
+            .item_add_to_cart_btn {
+              @extend %button;
+              background: none;
+              color: $purple;
+            }
           }
         }
       }

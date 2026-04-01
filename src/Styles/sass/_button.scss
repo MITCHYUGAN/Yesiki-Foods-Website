@@ -2,9 +2,9 @@
   color: $white;
   background-color: $purple;
   border: none;
-  padding: 20px 27px;
   border-radius: 8px;
   cursor: pointer;
+  font-family: $jakartafont;
 }
 
 %landingPageButtons {
@@ -24,6 +24,7 @@
   font-size: 40px;
   font-family: $jakartafont;
   transition: all 0.5s;
+  padding: 20px 27px;
 }
 
 .sendMessageBtn:hover {
@@ -78,18 +79,20 @@
   box-shadow: 0 3px 20px -8px #6000e8;
 }
 
-// Pages
+// Buttons on the menu page
 .menufilterButton {
   @extend %button;
-  border-radius: 30px;
+  border-radius: 8px;
+  // border-radius: 30px;
   padding: 10px 27px;
-  font-size: 18px;
+  font-size: 17px;
   color: black;
   background: #e8dafc4f;
 }
 
 .menufilterButtonActive {
-  background-color: $purple;
+  background-color: $Darkpurple;
+  // background-color: #3b1176;
   color: white;
 }
 
