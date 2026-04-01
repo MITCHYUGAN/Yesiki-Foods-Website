@@ -4,23 +4,27 @@ import menu from "../Data/data";
 import { useEffect } from "react";
 
 const Menu = () => {
-  const [menuItems, setMenuItems] = useState([]);
+  const [menuItems, setMenuItems] = useState(menu);
   const [category, setCategory] = useState("all");
+
+  console.log("category", category)
+  console.log("menuItems", menuItems)
 
   const filterMenu = (category) => {
     if (category === "all") {
-      setMenuItems(menu);
+      setMenuItems(menu); // Setting state triggers a Re-render
       return menu;
     } else {
       const filteredItems = menu.filter((item) => item.category === category);
-      setMenuItems(filteredItems);
+      setMenuItems(filteredItems); // This would run on every render even when the category does not change. because we are setting state.
       return filteredItems;
     }
   };
 
+  
   useEffect(() => {
-    filterMenu(category);
-  }, [category]);
+    filterMenu(category); 
+  }, [category]); // Only run the code inside of that useEffect when the category changes, not on every render
 
   return (
     <div className="menuPage">
@@ -30,25 +34,25 @@ const Menu = () => {
       </section>
       <div className="menuContent">
         <section className="menuContentFilter">
-          <button className="menufilterButton menufilterButtonActive" onClick={() => setCategory("all")}>
+          <button className={category === "all" ? "menufilterButton menufilterButtonActive" : "menufilterButton"} onClick={() => setCategory("all")}>
             All
           </button>
-          <button className="menufilterButton" onClick={() => setCategory("rice_and_more")}>
+          <button className={category === "rice_and_more" ? "menufilterButton menufilterButtonActive" : "menufilterButton"} onClick={() => setCategory("rice_and_more")}>
             Rice & More
           </button>
-          <button className="menufilterButton" onClick={() => setCategory("swallow_and_soup")}>
+          <button className={category === "swallow_and_soup" ? "menufilterButton menufilterButtonActive" : "menufilterButton"} onClick={() => setCategory("swallow_and_soup")}>
             Swallow & soup
           </button>
-          <button className="menufilterButton" onClick={() => setCategory("protein")}>
+          <button className={category === "protein" ? "menufilterButton menufilterButtonActive" : "menufilterButton"} onClick={() => setCategory("protein")}>
             Protein
           </button>
-          <button className="menufilterButton" onClick={() => setCategory("drinks")}>
+          <button className={category === "drinks" ? "menufilterButton menufilterButtonActive" : "menufilterButton"} onClick={() => setCategory("drinks")}>
             Drinks
           </button>
-          <button className="menufilterButton" onClick={() => setCategory("snack_and_ice_cream")}>
+          <button className={category === "snack_and_ice_cream" ? "menufilterButton menufilterButtonActive" : "menufilterButton"} onClick={() => setCategory("snack_and_ice_cream")}>
             Snacks & Ice cream
           </button>
-          <button className="menufilterButton" onClick={() => setCategory("alcohol")}>
+          <button className={category === "alcohol" ? "menufilterButton menufilterButtonActive" : "menufilterButton"} onClick={() => setCategory("alcohol")}>
             Alcohol
           </button>
         </section>
