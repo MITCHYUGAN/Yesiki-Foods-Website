@@ -746,11 +746,13 @@ header .headerSection .menuBtn {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 0px 20px 0px;
   background-color: black;
   color: #FFFFFF;
   font-family: "Plus Jakarta Sans", sans-serif;
-  padding: 40px 0px;
+  gap: 30px;
 }
 .footerSection .footer {
   display: flex;
@@ -766,7 +768,6 @@ header .headerSection .menuBtn {
   flex-direction: column;
   gap: 20px;
   align-items: flex-start;
-  width: 350px;
 }
 .footerSection .footer .footerdiv1 h1 {
   font-weight: 800;
@@ -781,27 +782,95 @@ header .headerSection .menuBtn {
   font-size: 20px;
   line-height: 140%;
 }
-.footerSection .footer .footerservice, .footerSection .footer .footercompany, .footerSection .footer .footersocials {
+.footerSection .footer .footerservice,
+.footerSection .footer .footercompany,
+.footerSection .footer .footersocials {
   display: flex;
   flex-direction: column;
   gap: 32px;
   width: 200px;
 }
-.footerSection .footer .footerservice ul, .footerSection .footer .footercompany ul, .footerSection .footer .footersocials ul {
+.footerSection .footer .footerservice ul,
+.footerSection .footer .footercompany ul,
+.footerSection .footer .footersocials ul {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.footerSection .footer .footerservice ul li a, .footerSection .footer .footercompany ul li a, .footerSection .footer .footersocials ul li a {
+.footerSection .footer .footerservice ul li a,
+.footerSection .footer .footercompany ul li a,
+.footerSection .footer .footersocials ul li a {
   color: #FFFFFF;
   font-weight: 400;
   font-size: 20px;
   transition: 0.5s;
 }
-.footerSection .footer .footerservice ul li a:hover, .footerSection .footer .footercompany ul li a:hover, .footerSection .footer .footersocials ul li a:hover {
+.footerSection .footer .footerservice ul li a:hover,
+.footerSection .footer .footercompany ul li a:hover,
+.footerSection .footer .footersocials ul li a:hover {
   color: #651fc5;
 }
 
+@media (max-width: 1080px) {
+  .footerSection {
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: #FFFFFF;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    gap: 30px;
+  }
+  .footerSection .footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 88%;
+  }
+  .footerSection .footer .footerdiv1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    width: 380px;
+  }
+  .footerSection .footer .footerdiv1 h1 {
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 120%;
+  }
+  .footerSection .footer .footerdiv1 h1 span {
+    color: #651fc5;
+  }
+  .footerSection .footer .footerdiv1 p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+  }
+  .footerSection .footer .footerservice,
+  .footerSection .footer .footercompany,
+  .footerSection .footer .footersocials {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footerSection .footer .footerservice ul,
+  .footerSection .footer .footercompany ul,
+  .footerSection .footer .footersocials ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footerSection .footer .footerservice ul li a,
+  .footerSection .footer .footercompany ul li a,
+  .footerSection .footer .footersocials ul li a {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 20px;
+  }
+}
 .menuPage {
   width: 100%;
   display: flex;

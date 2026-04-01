@@ -1,139 +1,142 @@
-.footerSection{
-    min-height: 40vh;
+.footerSection {
+  min-height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 0px 20px 0px;
+  background-color: $black;
+  color: $white;
+  font-family: $jakartafont;
+  gap: 30px;
+
+  .footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: $websiteSize;
+    row-gap: 80px;
+
+    .footerdiv1 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+      // width: 50px;
+
+      h1 {
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 120%;
+
+        span {
+          color: $purple;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+      }
+    }
+
+    .footerservice,
+    .footercompany,
+    .footersocials {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 200px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        li {
+          a {
+            color: $white;
+            font-weight: 400;
+            font-size: 20px;
+            transition: 0.5s;
+
+            &:hover {
+              color: $purple;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .footerSection {
+    min-height: 70vh;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: $black;
     color: $white;
     font-family: $jakartafont;
-    padding: 40px 0px;
+    gap: 30px;
 
-    .footer{
+    .footer {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: $websiteSize;
+
+      .footerdiv1 {
         display: flex;
+        flex-direction: column;
+        gap: 20px;
         align-items: flex-start;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 30px;
-        width: $websiteSize;
-        row-gap: 80px;
+        width: 380px;
 
-        .footerdiv1{
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: flex-start;
-            width: 350px;
+        h1 {
+          font-weight: 800;
+          font-size: 64px;
+          line-height: 120%;
 
-            h1{
-                font-weight: 800;
-                font-size: 60px;
-                line-height: 120%;
-
-                span{
-                    color: $purple;
-                }
-            }
-
-            p{
-                font-weight: 400;
-                font-size: 20px;
-                line-height: 140%;
-            }
+          span {
+            color: $purple;
+          }
         }
 
-        .footerservice, .footercompany, .footersocials{
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            width: 200px;   
-
-            ul{
-                display: flex;
-                flex-direction: column;
-                gap: 24px;
-
-                li{
-
-                    a{
-                        color: $white;
-                        font-weight: 400;
-                        font-size: 20px;
-                        transition: 0.5s;
-
-                        &:hover{
-                            color: $purple;
-                        }
-                    }
-                }
-            }
+        p {
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 140%;
         }
+      }
+
+      .footerservice,
+      .footercompany,
+      .footersocials {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+
+          li {
+            a {
+              color: $white;
+              font-weight: 400;
+              font-size: 20px;
+            }
+          }
+        }
+      }
     }
+  }
 }
-
-
-
-// @media (max-width: 1080px) {
-//     .footerSection{
-//         min-height: 70vh;
-//         width: 100%;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         background-color: $black;
-//         color: $white;
-//         font-family: $jakartafont;
-    
-//         .footer{
-//             display: flex;
-//             align-items: flex-start;
-//             justify-content: space-between;
-//             width: $websiteSize;
-    
-//             .footerdiv1{
-//                 display: flex;
-//                 flex-direction: column;
-//                 gap: 20px;
-//                 align-items: flex-start;
-//                 width: 380px;
-    
-//                 h1{
-//                     font-weight: 800;
-//                     font-size: 64px;
-//                     line-height: 120%;
-    
-//                     span{
-//                         color: $purple;
-//                     }
-//                 }
-    
-//                 p{
-//                     font-weight: 400;
-//                     font-size: 24px;
-//                     line-height: 140%;
-//                 }
-//             }
-    
-//             .footerservice, .footercompany, .footersocials{
-//                 display: flex;
-//                 flex-direction: column;
-//                 gap: 32px;
-    
-//                 ul{
-//                     display: flex;
-//                     flex-direction: column;
-//                     gap: 24px;
-    
-//                     li{
-    
-//                         a{
-//                             color: $white;
-//                             font-weight: 400;
-//                             font-size: 20px;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
