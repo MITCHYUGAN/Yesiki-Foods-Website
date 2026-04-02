@@ -7,7 +7,7 @@
   text-decoration: none;
 }
 
-.menuPage .menuContent .all_items .item .item_content .item_buttons .item_add_to_cart_btn, .menuPage .menuContent .all_items .item .item_content .item_buttons .item_order_now_btn, .menufilterButton, .navBtn, .sendMessageBtn, .bulkOrdersBtn, .viewMenuBtn, .makeOrderBtn {
+.menuPage .menuContent .all_items .item .item_content .item_buttons .item_add_to_cart_btn, .menuPage .menuContent .all_items .item .item_content .item_buttons .item_order_now_btn, header .headerSection .shopping_cart_button, .cart_order_now_btn, .menufilterButton, .navBtn, .sendMessageBtn, .bulkOrdersBtn, .viewMenuBtn, .makeOrderBtn {
   color: #FFFFFF;
   background-color: #651fc5;
   border: none;
@@ -96,6 +96,10 @@
   color: white;
 }
 
+.cart_order_now_btn {
+  padding: 12px 30px;
+}
+
 @media (max-width: 1020px) {
   .sendMessageBtn {
     font-size: 30px;
@@ -155,7 +159,7 @@ header .headerSection .nav ul {
 }
 header .headerSection .nav ul li a {
   font-family: "Plus Jakarta Sans", sans-serif;
-  color: #0A0000;
+  color: #0a0000;
   font-size: 20px;
   letter-spacing: 0.5px;
   font-weight: 400;
@@ -180,6 +184,17 @@ header .headerSection .menuBtn {
   font-size: 30px;
   cursor: pointer;
 }
+header .headerSection .shopping_cart_button {
+  border: none;
+  outline: none;
+  background: #3A008C;
+  cursor: pointer;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 
 @media (max-width: 901px) {
   header .headerSection .nav {
@@ -194,7 +209,6 @@ header .headerSection .menuBtn {
     right: 20px;
     border-radius: 8px;
     overflow: hidden;
-    transition: max-height 0.5s;
   }
   header .headerSection .nav ul {
     flex-direction: column;
@@ -204,12 +218,118 @@ header .headerSection .menuBtn {
   }
   header .headerSection .navClose {
     max-height: 0px;
-    transition: max-height 0.5s;
   }
   header .headerSection .menuBtn {
     display: block;
   }
 }
+.cart {
+  height: 100vh;
+  width: min(90%, 500px);
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: max-width 0.5s;
+  overflow: scroll;
+  z-index: 1000;
+}
+.cart .cart_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: inherit;
+  align-items: center;
+}
+.cart .cart_content .cart_items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  padding: 20px;
+}
+.cart .cart_content .cart_items .cart_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart .cart_content .cart_items .cart_item .cart_item_img {
+  width: 100px;
+  border-radius: 8px;
+}
+.cart .cart_content .cart_items .cart_item .cart_item_img img {
+  border-radius: 8px;
+  width: 100%;
+}
+.cart .cart_content .cart_items .cart_item .cart_item_texts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cart .cart_content .cart_items .cart_item .cart_item_btns {
+  display: flex;
+  gap: 10px;
+  border-radius: 8px;
+  color: black;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  align-items: center;
+}
+.cart .cart_content .cart_items .cart_item .cart_item_btns button {
+  background: none;
+  border-radius: 8px;
+  border: 1px solid #651fc5;
+  color: #651fc5;
+  outline: none;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 0px 7px;
+}
+.cart .cart_content .cart_checkout_section {
+  width: 100%;
+  position: sticky;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  height: 350px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2823529412);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.cart .cart_content .cart_checkout_section div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.189);
+  padding-bottom: 10px;
+}
+.cart .cart_header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.cart .cart_header .close_cart_btn {
+  cursor: pointer;
+}
+
+.cartClose {
+  max-width: 0px;
+}
+.cartClose .cart_content {
+  display: none;
+}
+
+.cartOpen {
+  max-width: 400px;
+  box-shadow: 0px 0px 10px 20000px rgba(0, 0, 0, 0.248);
+}
+.cartOpen .cart_content {
+  display: flex;
+}
+
 @font-face {
   font-family: "mazzard";
   src: url("../../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf");

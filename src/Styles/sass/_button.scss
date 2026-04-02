@@ -96,6 +96,14 @@
   color: white;
 }
 
+.cart_order_now_btn{
+  @extend %button;
+  padding: 12px 30px;
+}
+
+
+
+
 @media (max-width: 1020px) {
   .sendMessageBtn {
     font-size: 30px;

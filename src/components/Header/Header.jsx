@@ -1,9 +1,13 @@
 import logo from "./Images/logo.svg";
 import { RxDropdownMenu } from "react-icons/rx";
 import { useState } from "react";
+import { ShoppingCartIcon } from "lucide-react";
+import Cart from "../Cart/Cart";
 
 const Header = () => {
   const [openNav, setOpenNav] = useState("navClose");
+  const [ifActive, setCartActive] = useState("cartClose");
+
   return (
     <header>
       <div className="headerSection">
@@ -22,19 +26,31 @@ const Header = () => {
               <a href="">Contact Us</a>
             </li>
           </ul>
-          <button className="navBtn">Order Now</button>
-          <p>Cart Icon</p>
+          {/* <button className="navBtn">Order Now</button> */}
         </nav>
-        <RxDropdownMenu
-          className="menuBtn"
-          onClick={() => {
-            if (openNav === "navOpen") {
-              setOpenNav("navClose");
-            } else {
-              setOpenNav("navOpen");
-            }
-          }}
-        />
+
+        <div>
+          <RxDropdownMenu
+            className="menuBtn"
+            onClick={() => {
+              if (openNav === "navOpen") {
+                setOpenNav("navClose");
+              } else {
+                setOpenNav("navOpen");
+              }
+            }}
+          />
+
+          <button className="shopping_cart_button" onClick={() => setCartActive("cartOpen")}>
+            <ShoppingCartIcon />
+            <h4>
+              {" "}
+              <span>CART </span> • 0
+            </h4>
+          </button>
+        </div>
+
+        <Cart ifActive={ifActive} setCartActive={setCartActive} />
       </div>
     </header>
   );

@@ -9,6 +9,7 @@
 @import "./variables";
 @import "./button";
 @import "./components/Header";
+@import "./components/Cart";
 @import "./components/LandingPage";
 @import "./components/WhyChooseUs";
 @import "./components/ViewMenu";
@@ -16,6 +17,6 @@
 @import "./components/BulkOrders.scss";
 @import "./components/Question.scss";
 @import "./components/Footer";
-@import "./pages/Menu"
 
 // Pages
+@import "./pages/Menu";
