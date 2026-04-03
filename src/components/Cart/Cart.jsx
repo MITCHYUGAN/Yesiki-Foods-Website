@@ -1,17 +1,60 @@
 import { X } from "lucide-react";
-// import { ShoppingCart } from "lucide-react";
-import jollofrice from "../../assets/rice_others/JOLLOF-RICE-3000.jpg";
+import PropTypes from 'prop-types';
 
-const Cart = ({ setCartActive, ifActive }) => {
+const Cart = ({ setCartActive, ifActive, cart, setCart }) => {
+  const increaseQuantity = (item) => {
+    item.quantity = item.quantity + 1;
+    console.log("Cart", cart);
+    setCart((prevItems) => [...prevItems]);
+  };
+
+  const decreaseQuantity = (item) => {
+    if (item.quantity === 1) {
+      console.log("Do you want to remove this item from the cart?")
+      return
+    }
+
+    item.quantity = item.quantity - 1;
+    console.log("Cart", cart);
+    setCart((prevItems) => [...prevItems]);
+  };
+
   return (
     <section className={`cart ${ifActive}`}>
       <div className="cart_content">
         <section className="cart_items">
-        <div className="cart_header">
-          <h2>CART</h2>
-          <X size={40} className="close_cart_btn" onClick={() => setCartActive("cartClose")} />
-        </div>
-          <div className="cart_item">
+          <div className="cart_header">
+            <h2>CART</h2>
+            <X size={40} className="close_cart_btn" onClick={() => setCartActive("cartClose")} />
+          </div>
+
+          {cart.length === 0
+            ? "Your cart is empty"
+            : cart.map((item) => {
+                return (
+                  <div className="cart_item" key={item.name}>
+                    <div className="cart_item_img">
+                      <img src={item.img} alt="" />
+                    </div>
+                    <div className="cart_item_texts">
+                      <h4 className="cart_item_name">{item.name}</h4>
+                      <p className="cart_item_price">₦{item.price}</p>
+                    </div>
+                    <div className="cart_item_btns">
+                      <button className="cart_item_decrease_btn" onClick={() => decreaseQuantity(item)}>
+                        -
+                      </button>
+                      <p>{item.quantity}</p>
+                      <button className="cart_item_increase_btn" onClick={() => increaseQuantity(item)}>
+                        +
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+
+          {}
+          {/* <div className="cart_item">
             <div className="cart_item_img">
               <img src={jollofrice} alt="" />
             </div>
@@ -24,189 +67,7 @@ const Cart = ({ setCartActive, ifActive }) => {
               <p>2</p>
               <button className="cart_item_increase_btn">+</button>
             </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
-          <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div>
+          </div> */}
         </section>
         <section className="cart_checkout_section">
           {/* <div>
@@ -231,5 +92,12 @@ const Cart = ({ setCartActive, ifActive }) => {
     </section>
   );
 };
+
+Cart.propTypes = {
+  setCartActive: PropTypes.func,
+  ifActive: PropTypes.string,
+  cart: PropTypes.array,
+  setCart: PropTypes.func
+}
 
 export default Cart;

@@ -40,7 +40,6 @@ import peppered_beef_img from "../assets/proteins/peppered-beef.webp";
 import peppered_chicken_img from "../assets/proteins/Peppered-Chicken.webp";
 import peppered_goatmeat_img from "../assets/proteins/Peppered-Goatmeat.webp";
 
-
 // Drinks
 import water_img from "../assets/drinks/water.jpg";
 import pepsi_img from "../assets/drinks/PESPI.jpg";
@@ -55,7 +54,6 @@ import teem_soda_water_img from "../assets/drinks/TEEM-SODA-WATER.jpg";
 import teem_tonic_water_img from "../assets/drinks/TEEM-TONIC-WATER.jpg";
 import zobo_drink_img from "../assets/drinks/ZOBO-DRINK.jpg";
 
-
 // Ice cream images
 import banana_ice_cream_img from "../assets/ice_cream/banana_ice_cream.jpg";
 import chocolate_ice_cream_img from "../assets/ice_cream/chocolate_ice_cream.jpg";
@@ -64,7 +62,6 @@ import cookies_and_cream_ice_cream_img from "../assets/ice_cream/cookies_and_cre
 import french_vanilla_ice_cream_img from "../assets/ice_cream/french_vanilla_ice_cream.jpg";
 import Straciatella_ice_cream_img from "../assets/ice_cream/Straciatella_ice_cream.jpg";
 import strawberry_ice_cream_img from "../assets/ice_cream/strawberry_ice_cream.jpg";
-
 
 // Alcohol
 import budweiser_img from "../assets/alcohol/BUDWEISER.jpg";
@@ -83,7 +80,6 @@ import tiger_beer_img from "../assets/alcohol/TIGER-BEER.jpg";
 import desperados_img from "../assets/alcohol/DESPERADO.jpg";
 import castle_img from "../assets/alcohol/castle.jpg";
 
-
 const menu = [
   // Rice & More
   {
@@ -91,48 +87,56 @@ const menu = [
     price: 3500,
     img: jollof_rice_img,
     category: "rice_and_more",
+    quantity: 1,
   },
   {
     name: "Fried Rice",
     price: 3000,
     img: fried_rice_img,
     category: "rice_and_more",
+    quantity: 1,
   },
   {
     name: "Oriental Rice",
     price: 6000,
     img: oriental_rice_img,
     category: "rice_and_more",
+    quantity: 1,
   },
   {
     name: "Mexican Rice",
     price: 5000,
     img: mexican_rice_img,
     category: "rice_and_more",
+    quantity: 1,
   },
   {
     name: "Chinese Rice",
     price: 6000,
     img: chinese_rice_img,
     category: "rice_and_more",
+    quantity: 1,
   },
   {
     name: "Paella Royale Rice",
     price: 10000,
     img: paella_royale_rice_img,
     category: "rice_and_more",
+    quantity: 1,
   },
   {
     name: "Shepherd Rice",
     price: 6000,
     img: shepherd_rice_img,
     category: "rice_and_more",
+    quantity: 1,
   },
   {
     name: "Cajun Fried Rice",
     price: 7000,
     img: cajun_fried_rice_img,
     category: "rice_and_more",
+    quantity: 1,
   },
 
   // Swallow & Soup
@@ -141,36 +145,42 @@ const menu = [
     price: 21500,
     category: "swallow_and_soup",
     img: cat_fish_pepper_soup_img,
+    quantity: 1,
   },
   {
     name: "Vegetable Soup",
     price: 6450,
     category: "swallow_and_soup",
     img: vegetable_soup_img,
+    quantity: 1,
   },
   {
     name: "Okro Soup",
     price: 6450,
     category: "swallow_and_soup",
     img: okro_soup_img,
+    quantity: 1,
   },
   {
     name: "Efo-riro Soup",
     price: 6450,
     category: "swallow_and_soup",
     img: efo_riro_soup_img,
+    quantity: 1,
   },
   {
     name: "Fisherman Soup",
     price: 24725,
     category: "swallow_and_soup",
     img: fisherman_soup_img,
+    quantity: 1,
   },
   {
     name: "Oha Soup",
     price: 4960,
     category: "swallow_and_soup",
     img: oha_soup_img,
+    quantity: 1,
   },
   // {
   //   name: "Egusi soup",
@@ -189,36 +199,42 @@ const menu = [
     price: 500,
     category: "swallow_and_soup",
     img: eba_img,
+    quantity: 1,
   },
   {
     name: "Amala",
     price: 600,
     category: "swallow_and_soup",
     img: amala_img,
+    quantity: 1,
   },
   {
     name: "Fufu",
     price: 500,
     category: "swallow_and_soup",
     img: fufu_img,
+    quantity: 1,
   },
   {
     name: "Semovita",
     price: 700,
     category: "swallow_and_soup",
     img: semovita_img,
+    quantity: 1,
   },
   {
     name: "Wheat",
     price: 600,
     category: "swallow_and_soup",
     img: wheat_img,
+    quantity: 1,
   },
   {
     name: "Starch",
     price: 800,
     category: "swallow_and_soup",
     img: starch_img,
+    quantity: 1,
   },
 
   // Protein
@@ -227,48 +243,56 @@ const menu = [
     price: 7000,
     category: "protein",
     img: chicken_wings_img,
+    quantity: 1,
   },
   {
     name: "Peppered Croaker Fish",
     price: 2400,
     category: "protein",
     img: peppered_croaker_fish_img,
+    quantity: 1,
   },
   {
     name: "Boiled Eggs",
     price: 500,
     category: "protein",
     img: boiled_eggs_img,
+    quantity: 1,
   },
   {
     name: "Peppered Snail",
     price: 10000,
     category: "protein",
     img: peppered_snail_img,
+    quantity: 1,
   },
   {
     name: "Peppered Assorted Meat",
     price: 7000,
     category: "protein",
     img: peppered_assorted_meat_img,
+    quantity: 1,
   },
   {
     name: "Peppered Beef",
     price: 8000,
     category: "protein",
     img: peppered_beef_img,
+    quantity: 1,
   },
   {
     name: "Peppered Chicken",
     price: 8000,
     category: "protein",
     img: peppered_chicken_img,
+    quantity: 1,
   },
   {
     name: "Peppered Goatmeat",
     price: 10000,
     category: "protein",
     img: peppered_goatmeat_img,
+    quantity: 1,
   },
 
   // Drinks
@@ -277,74 +301,85 @@ const menu = [
     price: 300,
     img: water_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Pepsi",
     price: 600,
     img: pepsi_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "7Up",
     price: 600,
     img: sevenup_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Chivita Active",
     price: 2500,
     img: chivita_active_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Cranberry Juice",
     price: 5000,
     img: cranberry_juice_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Fayrouz",
     price: 1000,
     img: fayrouz_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Malta Guiness",
     price: 1000,
     img: malta_guiness_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Mirinda",
     price: 600,
     img: mirinda_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Teem Bitter Lemon",
     price: 600,
     img: teem_bitter_lemon_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Teem Soda Water",
     price: 700,
     img: teem_soda_water_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Teem Tonic Water",
     price: 700,
     img: teem_tonic_water_img,
     category: "drinks",
+    quantity: 1,
   },
   {
     name: "Zobo Drink",
     price: 1000,
     img: zobo_drink_img,
     category: "drinks",
+    quantity: 1,
   },
-
 
   // Snacks & Ice cream
   {
@@ -352,36 +387,42 @@ const menu = [
     price: 900,
     img: chickenpie_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Meat Pie",
     price: 900,
     img: meatpie_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Doughnut",
     price: 700,
     img: doughnut_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Sugar Jam Doughnut",
     price: 700,
     img: sugar_jam_doughnut_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Sausage Beef Roll",
     price: 700,
     img: sausage_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Sugar sprinkled Doughnut",
     price: 600,
     img: sugar_sprinkled_doughnut_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
 
   // Ice Cream
@@ -390,139 +431,157 @@ const menu = [
     price: 1600,
     img: banana_ice_cream_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Chocolate Ice Cream",
     price: 1600,
     img: chocolate_ice_cream_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Coconut Ice Cream",
     price: 1200,
     img: coconut_ice_cream_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Cookies & Cream Ice Cream",
     price: 2000,
     img: cookies_and_cream_ice_cream_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "French Vanilla Ice Cream",
     price: 1200,
     img: french_vanilla_ice_cream_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Straciatella Ice Cream",
     price: 1600,
     img: Straciatella_ice_cream_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
   {
     name: "Strawberry Ice Cream",
     price: 1600,
     img: strawberry_ice_cream_img,
     category: "snack_and_ice_cream",
+    quantity: 1,
   },
-  
+
   // Alchohol
   {
     name: "Budweiser",
     price: 2500,
     img: budweiser_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Star",
     price: 2000,
     img: star_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Goldberg",
     price: 2000,
     img: goldberg_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Gulder",
     price: 2000,
     img: gulder_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Ralder",
     price: 2000,
     img: ralder_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Smirnoff Ice",
     price: 1500,
     img: smirnoff_ice_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Heineken",
     price: 2500,
     img: heineken_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Flying Fish",
     price: 2000,
     img: flying_fish_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Trophy",
     price: 2000,
     img: trophy_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Origin",
     price: 2500,
     img: origin_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Legend",
     price: 2500,
     img: legend_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Guiness Stout",
     price: 2500,
     img: guiness_stout_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Tiger Beer",
     price: 2500,
     img: tiger_beer_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Desperados",
     price: 2500,
     img: desperados_img,
     category: "alcohol",
+    quantity: 1,
   },
   {
     name: "Castle",
     price: 2500,
     img: castle_img,
     category: "alcohol",
+    quantity: 1,
   },
-
 ];
 
 export default menu;
-
-
-

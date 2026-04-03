@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header cart={[]} setCart={""} />
       <LandingPage />
       <WhyChooseUs />
       <ViewMenu />

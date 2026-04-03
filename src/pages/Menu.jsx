@@ -5,11 +5,13 @@ import menu from "../Data/data";
 import { useEffect } from "react";
 import { ShoppingCartIcon } from "lucide-react";
 
-
 const Menu = () => {
   const [menuItems, setMenuItems] = useState(menu);
   const [category, setCategory] = useState("all");
 
+  const [cart, setCart] = useState([])
+
+  // Filter menu By category
   const filterMenu = (category) => {
     if (category === "all") {
       setMenuItems(menu); // Setting state triggers a Re-render
@@ -25,9 +27,24 @@ const Menu = () => {
     filterMenu(category);
   }, [category]); // Only run the code inside of that useEffect when the category changes, not on every render
 
+
+
+  // Add to Cart Logic
+  const addToCart = (item, index) => {
+
+    // if (item.quantity === 0) {
+    //   console.log("You cannot add this item to the cart")
+    //   return
+    // }
+
+    console.log("Index", index, item)
+    setCart(prevItems => [...prevItems, {...item}])
+    console.log("Cart Items", cart)
+  }
+
   return (
     <div className="menuPage">
-      <Header />
+      <Header cart={cart} setCart={setCart} />
       <section className="menuHeader">
         <div className="menuHeaderTexts">
           <p className="menuHeaderTextsfirstP">OUR MENU</p>
@@ -64,7 +81,7 @@ const Menu = () => {
         <div className="all_items">
           {menuItems.length === 0
             ? "Items of this category is not available"
-            : menuItems.map((item) => {
+            : menuItems.map((item, index) => {
                 return (
                   <div key={item.name} className="item">
                     <div className="item_img">
@@ -75,7 +92,7 @@ const Menu = () => {
                       <p className="item_price">₦{item.price.toLocaleString()}</p>
                       <div className="item_buttons">
                         <button className="item_order_now_btn">Order now</button>
-                        <button className="item_add_to_cart_btn" title="Add to cart"><ShoppingCartIcon /> + </button>
+                        <button className="item_add_to_cart_btn" title="Add to cart" onClick={() => addToCart(item, index)}><ShoppingCartIcon /> + </button>
                       </div>
                     </div>
                   </div>

@@ -193,6 +193,12 @@ header .headerSection .shopping_cart_button {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+header .headerSection .shopping_cart_button h4 {
+  display: flex;
+  gap: 10px;
+}
+header .headerSection .shopping_cart_button {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -290,7 +296,6 @@ header .headerSection .shopping_cart_button {
   background-color: white;
   bottom: 0;
   left: 0;
-  height: 350px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2823529412);
   padding: 30px 20px;
   display: flex;

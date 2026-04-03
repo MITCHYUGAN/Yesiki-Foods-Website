@@ -3,8 +3,9 @@ import { RxDropdownMenu } from "react-icons/rx";
 import { useState } from "react";
 import { ShoppingCartIcon } from "lucide-react";
 import Cart from "../Cart/Cart";
+import PropTypes from "prop-types"
 
-const Header = () => {
+const Header = ({cart, setCart}) => {
   const [openNav, setOpenNav] = useState("navClose");
   const [ifActive, setCartActive] = useState("cartClose");
 
@@ -43,17 +44,23 @@ const Header = () => {
 
           <button className="shopping_cart_button" onClick={() => setCartActive("cartOpen")}>
             <ShoppingCartIcon />
-            <h4>
-              {" "}
-              <span>CART </span> • 0
+            <h4 className="">
+              <span>CART </span> 
+              <span>•</span>
+              <span>{cart.length}</span>
             </h4>
           </button>
         </div>
 
-        <Cart ifActive={ifActive} setCartActive={setCartActive} />
+        <Cart ifActive={ifActive} setCartActive={setCartActive} cart={cart} setCart={setCart} />
       </div>
     </header>
   );
 };
+
+Header.propTypes = {
+  cart: PropTypes.array,
+  setCart: PropTypes.func
+}
 
 export default Header;
