@@ -2,7 +2,7 @@ import bellIcon from "./Images/bellIcon.svg";
 import menu from "./Images/menu.svg";
 import landingPageImg from "./Images/landingPageImg.svg";
 
-const LandingPage = () => {
+const HeroSection = () => {
   return (
     <section className="landingPageSection">
       <div className="landingPage">
@@ -32,4 +32,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default HeroSection;

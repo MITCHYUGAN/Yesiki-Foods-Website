@@ -4,12 +4,13 @@ import Footer from "../components/Footer/Footer";
 import menu from "../Data/data";
 import { useEffect } from "react";
 import { ShoppingCartIcon } from "lucide-react";
+import { useContext } from "react";
+import CartContext from "../context/CartContext";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState(menu);
   const [category, setCategory] = useState("all");
-
-  const [cart, setCart] = useState([])
+  const {cart, setCart} = useContext(CartContext)
 
   // Filter menu By category
   const filterMenu = (category) => {
@@ -27,20 +28,12 @@ const Menu = () => {
     filterMenu(category);
   }, [category]); // Only run the code inside of that useEffect when the category changes, not on every render
 
-
-
   // Add to Cart Logic
   const addToCart = (item, index) => {
-
-    // if (item.quantity === 0) {
-    //   console.log("You cannot add this item to the cart")
-    //   return
-    // }
-
-    console.log("Index", index, item)
-    setCart(prevItems => [...prevItems, {...item}])
-    console.log("Cart Items", cart)
-  }
+    console.log("Index", index, item);
+    setCart((prevItems) => [...prevItems, { ...item }]);
+    console.log("Cart Items", cart);
+  };
 
   return (
     <div className="menuPage">
@@ -92,7 +85,9 @@ const Menu = () => {
                       <p className="item_price">₦{item.price.toLocaleString()}</p>
                       <div className="item_buttons">
                         <button className="item_order_now_btn">Order now</button>
-                        <button className="item_add_to_cart_btn" title="Add to cart" onClick={() => addToCart(item, index)}><ShoppingCartIcon /> + </button>
+                        <button className="item_add_to_cart_btn" title="Add to cart" onClick={() => addToCart(item, index)}>
+                          <ShoppingCartIcon /> +{" "}
+                        </button>
                       </div>
                     </div>
                   </div>

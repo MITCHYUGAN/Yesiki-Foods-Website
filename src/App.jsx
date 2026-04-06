@@ -1,5 +1,5 @@
 import Header from "./components/Header/Header"
-import LandingPage from "./components/LandingPage/LandingPage"
+import HeroSection from "./components/HeroSection/HeroSection"
 import OrderFoodOnTheGo from "./components/OrderFoodOnTheGo/OrderFoodOnTheGo"
 import ViewMenu from "./components/ViewMenu/ViewMenu"
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs"
@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
-      <Header cart={[]} setCart={""} />
-      <LandingPage />
+      <Header/>
+      <HeroSection />
       <WhyChooseUs />
       <ViewMenu />
       <OrderFoodOnTheGo />

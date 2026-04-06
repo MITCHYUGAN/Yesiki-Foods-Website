@@ -3,22 +3,27 @@ import { RxDropdownMenu } from "react-icons/rx";
 import { useState } from "react";
 import { ShoppingCartIcon } from "lucide-react";
 import Cart from "../Cart/Cart";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
+import { Link } from "react-router";
 
-const Header = ({cart, setCart}) => {
+const Header = () => {
+  const { cart } = useContext(CartContext);
+
   const [openNav, setOpenNav] = useState("navClose");
   const [ifActive, setCartActive] = useState("cartClose");
 
   return (
     <header>
       <div className="headerSection">
-        <a href="/">
+        <Link to={"/"}>
           <img src={logo} className="logo" alt="Website Logo" />
-        </a>
+        </Link>
         <nav className={`${openNav} nav`}>
           <ul>
             <li>
-              <a href="/menu">Our Menu</a>
+              <Link to={"/menu"}>Our Menu</Link>
             </li>
             <li>
               <a href="">Bulk Orders</a>
@@ -45,14 +50,14 @@ const Header = ({cart, setCart}) => {
           <button className="shopping_cart_button" onClick={() => setCartActive("cartOpen")}>
             <ShoppingCartIcon />
             <h4 className="">
-              <span>CART </span> 
+              <span>CART </span>
               <span>•</span>
               <span>{cart.length}</span>
             </h4>
           </button>
         </div>
 
-        <Cart ifActive={ifActive} setCartActive={setCartActive} cart={cart} setCart={setCart} />
+        <Cart ifActive={ifActive} setCartActive={setCartActive} />
       </div>
     </header>
   );
@@ -60,7 +65,8 @@ const Header = ({cart, setCart}) => {
 
 Header.propTypes = {
   cart: PropTypes.array,
-  setCart: PropTypes.func
-}
+  setCart: PropTypes.func,
+  total: PropTypes.number,
+};
 
 export default Header;

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./Styles/css/global.css";
-import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router";
+import { Root } from "./Root.jsx";
+import App from "./App.jsx";
 import Menu from "./pages/Menu.jsx";
+import { createBrowserRouter } from "react-router";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +19,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Root router={router} />
   </React.StrictMode>,
 );

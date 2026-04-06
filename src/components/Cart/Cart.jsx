@@ -1,7 +1,12 @@
 import { X } from "lucide-react";
 import PropTypes from 'prop-types';
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 
-const Cart = ({ setCartActive, ifActive, cart, setCart }) => {
+const Cart = ({ setCartActive, ifActive, total }) => {
+
+  const {cart, setCart} = useContext(CartContext)
+
   const increaseQuantity = (item) => {
     item.quantity = item.quantity + 1;
     console.log("Cart", cart);
@@ -80,7 +85,7 @@ const Cart = ({ setCartActive, ifActive, cart, setCart }) => {
             </div> */}
           <div>
             <h2>Total</h2>
-            <p>₦10,000</p>
+            <p>₦{total}</p>
           </div>
           <button className="cart_order_now_btn">Order Now</button>
         </section>
@@ -97,7 +102,8 @@ Cart.propTypes = {
   setCartActive: PropTypes.func,
   ifActive: PropTypes.string,
   cart: PropTypes.array,
-  setCart: PropTypes.func
+  setCart: PropTypes.func,
+  total: PropTypes.number,
 }
 
 export default Cart;
