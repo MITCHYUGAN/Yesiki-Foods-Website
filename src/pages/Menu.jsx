@@ -10,7 +10,9 @@ import CartContext from "../context/CartContext";
 const Menu = () => {
   const [menuItems, setMenuItems] = useState(menu);
   const [category, setCategory] = useState("all");
-  const {cart, setCart} = useContext(CartContext)
+  const { cart, setCart } = useContext(CartContext);
+
+  const [total, setTotal] = useState(0);
 
   // Filter menu By category
   const filterMenu = (category) => {
@@ -29,15 +31,28 @@ const Menu = () => {
   }, [category]); // Only run the code inside of that useEffect when the category changes, not on every render
 
   // Add to Cart Logic
-  const addToCart = (item, index) => {
-    console.log("Index", index, item);
-    setCart((prevItems) => [...prevItems, { ...item }]);
-    console.log("Cart Items", cart);
+  const addToCart = (item) => {
+    setCart((prevItems) => [...prevItems, {...item }]);
   };
+
+  // Calculate total prices of items in the cart
+  const calculateTotal = () => {
+    const sumTotal = cart.reduce((initialTotal, currentValue) => {
+      return initialTotal + currentValue.price;
+    }, 0);
+
+    console.log("Sum Total", sumTotal);
+
+    setTotal(sumTotal);
+  };
+
+  useEffect(() => {
+    calculateTotal();
+  }, [cart]);
 
   return (
     <div className="menuPage">
-      <Header cart={cart} setCart={setCart} />
+      <Header cart={cart} setCart={setCart} total={total} />
       <section className="menuHeader">
         <div className="menuHeaderTexts">
           <p className="menuHeaderTextsfirstP">OUR MENU</p>
@@ -74,7 +89,8 @@ const Menu = () => {
         <div className="all_items">
           {menuItems.length === 0
             ? "Items of this category is not available"
-            : menuItems.map((item, index) => {
+            : 
+            menuItems.map((item, index) => {
                 return (
                   <div key={item.name} className="item">
                     <div className="item_img">
@@ -92,7 +108,8 @@ const Menu = () => {
                     </div>
                   </div>
                 );
-              })}
+              }
+              )}
         </div>
       </div>
       <Footer />

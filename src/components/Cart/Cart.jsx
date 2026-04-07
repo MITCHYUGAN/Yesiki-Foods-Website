@@ -1,27 +1,31 @@
 import { X } from "lucide-react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 
 const Cart = ({ setCartActive, ifActive, total }) => {
+  const { cart, setCart } = useContext(CartContext);
 
-  const {cart, setCart} = useContext(CartContext)
+  const increaseQuantity = (itemToIncreaseQuantity) => {
+    const newCartItems = cart.map((item) => {
+      if(itemToIncreaseQuantity.name === item.name){
+        return {...item, quantity: item.quantity + 1}
+      }
+      return item
+    })
 
-  const increaseQuantity = (item) => {
-    item.quantity = item.quantity + 1;
-    console.log("Cart", cart);
-    setCart((prevItems) => [...prevItems]);
+    setCart(newCartItems)
   };
 
-  const decreaseQuantity = (item) => {
-    if (item.quantity === 1) {
-      console.log("Do you want to remove this item from the cart?")
-      return
-    }
+  const decreaseQuantity = (itemToDecreaseQuantity) => {
+    const newCartArray = cart.map((item) => {
+      if (itemToDecreaseQuantity.name === item.name) {
+        return {...item, quantity: item.quantity - 1}
+      }
+      return item
+    })
 
-    item.quantity = item.quantity - 1;
-    console.log("Cart", cart);
-    setCart((prevItems) => [...prevItems]);
+    setCart(newCartArray)
   };
 
   return (
@@ -43,7 +47,7 @@ const Cart = ({ setCartActive, ifActive, total }) => {
                     </div>
                     <div className="cart_item_texts">
                       <h4 className="cart_item_name">{item.name}</h4>
-                      <p className="cart_item_price">₦{item.price}</p>
+                      <p className="cart_item_price">₦{item.price ? item.price.toLocaleString() : ""}</p>
                     </div>
                     <div className="cart_item_btns">
                       <button className="cart_item_decrease_btn" onClick={() => decreaseQuantity(item)}>
@@ -104,6 +108,6 @@ Cart.propTypes = {
   cart: PropTypes.array,
   setCart: PropTypes.func,
   total: PropTypes.number,
-}
+};
 
 export default Cart;

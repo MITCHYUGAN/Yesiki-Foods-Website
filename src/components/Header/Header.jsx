@@ -8,7 +8,7 @@ import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import { Link } from "react-router";
 
-const Header = () => {
+const Header = ({total}) => {
   const { cart } = useContext(CartContext);
 
   const [openNav, setOpenNav] = useState("navClose");
@@ -57,7 +57,7 @@ const Header = () => {
           </button>
         </div>
 
-        <Cart ifActive={ifActive} setCartActive={setCartActive} />
+        <Cart ifActive={ifActive} setCartActive={setCartActive} total={total} />
       </div>
     </header>
   );
