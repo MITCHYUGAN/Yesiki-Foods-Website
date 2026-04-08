@@ -8,24 +8,30 @@ const Cart = ({ setCartActive, ifActive, total }) => {
 
   const increaseQuantity = (itemToIncreaseQuantity) => {
     const newCartItems = cart.map((item) => {
-      if(itemToIncreaseQuantity.name === item.name){
-        return {...item, quantity: item.quantity + 1}
-      }
-      return item
-    })
+      if (itemToIncreaseQuantity.name === item.name) {
 
-    setCart(newCartItems)
+        // const newPrice = ""
+
+        return { ...item, quantity: item.quantity + 1, price: [item.price] };
+      }
+      return item;
+    });
+
+    console.log("newCartItems", )
+
+    setCart(newCartItems);
   };
 
   const decreaseQuantity = (itemToDecreaseQuantity) => {
     const newCartArray = cart.map((item) => {
       if (itemToDecreaseQuantity.name === item.name) {
-        return {...item, quantity: item.quantity - 1}
+        return { ...item, quantity: item.quantity - 1, price: item.price / 2 };
       }
-      return item
-    })
+      return item;
+    });
 
-    setCart(newCartArray)
+    const filteredArray = newCartArray.filter((item) => item.quantity > 0)
+    setCart(filteredArray);
   };
 
   return (
@@ -47,7 +53,10 @@ const Cart = ({ setCartActive, ifActive, total }) => {
                     </div>
                     <div className="cart_item_texts">
                       <h4 className="cart_item_name">{item.name}</h4>
-                      <p className="cart_item_price">₦{item.price ? item.price.toLocaleString() : ""}</p>
+                      <p className="cart_item_price">
+                        ₦{item.price ? item.price.toLocaleString() : ""} <span className="quantity_on_price">{item.quantity > 1 ? `(${item.quantity})` : ""}</span>
+                      </p>
+                      {/* <p>(3)</p> */}
                     </div>
                     <div className="cart_item_btns">
                       <button className="cart_item_decrease_btn" onClick={() => decreaseQuantity(item)}>
@@ -89,7 +98,7 @@ const Cart = ({ setCartActive, ifActive, total }) => {
             </div> */}
           <div>
             <h2>Total</h2>
-            <p>₦{total}</p>
+            <p>₦{total.toLocaleString()}</p>
           </div>
           <button className="cart_order_now_btn">Order Now</button>
         </section>

@@ -43,6 +43,14 @@
           display: flex;
           flex-direction: column;
           gap: 20px;
+
+          .cart_item_price{
+
+            .quantity_on_price{
+              font-size: 11px;
+              color: $purple;
+            }
+          }
         }
 
         .cart_item_btns {

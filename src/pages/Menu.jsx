@@ -32,7 +32,25 @@ const Menu = () => {
 
   // Add to Cart Logic
   const addToCart = (item) => {
-    setCart((prevItems) => [...prevItems, {...item }]);
+    // cart.includes(item.name)
+
+    const hasItemInCart = cart.some((cartItem) => cartItem.name === item.name);
+
+    // Add item to cart if it doesn't exist
+    if (!hasItemInCart) {
+      setCart((prevItems) => [...prevItems, { ...item }]);
+      return // Stop running the function here when it exist
+    }
+
+    // Increase the quantity of the particular item if it already exist
+    const newArrayAfterIncreasingQuantity = cart.map((cartItem) => {
+      if (cartItem.name === item.name) {
+        return {...item, quantity: cartItem.quantity + 1}
+      }
+      return cartItem
+    })
+
+    setCart(newArrayAfterIncreasingQuantity)
   };
 
   // Calculate total prices of items in the cart
@@ -42,7 +60,6 @@ const Menu = () => {
     }, 0);
 
     console.log("Sum Total", sumTotal);
-
     setTotal(sumTotal);
   };
 
@@ -89,8 +106,7 @@ const Menu = () => {
         <div className="all_items">
           {menuItems.length === 0
             ? "Items of this category is not available"
-            : 
-            menuItems.map((item, index) => {
+            : menuItems.map((item) => {
                 return (
                   <div key={item.name} className="item">
                     <div className="item_img">
@@ -101,15 +117,14 @@ const Menu = () => {
                       <p className="item_price">₦{item.price.toLocaleString()}</p>
                       <div className="item_buttons">
                         <button className="item_order_now_btn">Order now</button>
-                        <button className="item_add_to_cart_btn" title="Add to cart" onClick={() => addToCart(item, index)}>
+                        <button className="item_add_to_cart_btn" title="Add to cart" onClick={() => addToCart(item)}>
                           <ShoppingCartIcon /> +{" "}
                         </button>
                       </div>
                     </div>
                   </div>
                 );
-              }
-              )}
+              })}
         </div>
       </div>
       <Footer />
