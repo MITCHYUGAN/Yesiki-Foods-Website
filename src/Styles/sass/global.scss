@@ -9,10 +9,14 @@
 @import "./variables";
 @import "./button";
 @import "./components/Header";
-@import "./components/LandingPage";
+@import "./components/Cart";
+@import "./components/HeroSection";
 @import "./components/WhyChooseUs";
 @import "./components/ViewMenu";
 @import "./components/OrderFoodOnTheGo.scss";
 @import "./components/BulkOrders.scss";
 @import "./components/Question.scss";
-@import "./components/Footer"
+@import "./components/Footer";
+
+// Pages
+@import "./pages/Menu";
