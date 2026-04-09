@@ -3,21 +3,20 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 
-const Cart = ({ setCartActive, ifActive, total }) => {
+const Cart = ({ setCartActive, ifActive }) => {
   const { cart, setCart } = useContext(CartContext);
+
+  const total = cart.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.price * currentValue.quantity
+  }, 0)
 
   const increaseQuantity = (itemToIncreaseQuantity) => {
     const newCartItems = cart.map((item) => {
       if (itemToIncreaseQuantity.name === item.name) {
-
-        // const newPrice = ""
-
-        return { ...item, quantity: item.quantity + 1, price: [item.price] };
+        return { ...item, quantity: item.quantity + 1 };
       }
       return item;
     });
-
-    console.log("newCartItems", )
 
     setCart(newCartItems);
   };
@@ -25,12 +24,12 @@ const Cart = ({ setCartActive, ifActive, total }) => {
   const decreaseQuantity = (itemToDecreaseQuantity) => {
     const newCartArray = cart.map((item) => {
       if (itemToDecreaseQuantity.name === item.name) {
-        return { ...item, quantity: item.quantity - 1, price: item.price / 2 };
+        return { ...item, quantity: item.quantity - 1 };
       }
       return item;
     });
 
-    const filteredArray = newCartArray.filter((item) => item.quantity > 0)
+    const filteredArray = newCartArray.filter((item) => item.quantity > 0);
     setCart(filteredArray);
   };
 
@@ -53,10 +52,7 @@ const Cart = ({ setCartActive, ifActive, total }) => {
                     </div>
                     <div className="cart_item_texts">
                       <h4 className="cart_item_name">{item.name}</h4>
-                      <p className="cart_item_price">
-                        ₦{item.price ? item.price.toLocaleString() : ""} <span className="quantity_on_price">{item.quantity > 1 ? `(${item.quantity})` : ""}</span>
-                      </p>
-                      {/* <p>(3)</p> */}
+                      <p className="cart_item_price">₦{item.price ? item.price.toLocaleString() : ""}</p>
                     </div>
                     <div className="cart_item_btns">
                       <button className="cart_item_decrease_btn" onClick={() => decreaseQuantity(item)}>
@@ -70,22 +66,6 @@ const Cart = ({ setCartActive, ifActive, total }) => {
                   </div>
                 );
               })}
-
-          {}
-          {/* <div className="cart_item">
-            <div className="cart_item_img">
-              <img src={jollofrice} alt="" />
-            </div>
-            <div className="cart_item_texts">
-              <h4 className="cart_item_name">Jollof Rice</h4>
-              <p className="cart_item_price">₦3,500</p>
-            </div>
-            <div className="cart_item_btns">
-              <button className="cart_item_decrease_btn">-</button>
-              <p>2</p>
-              <button className="cart_item_increase_btn">+</button>
-            </div>
-          </div> */}
         </section>
         <section className="cart_checkout_section">
           {/* <div>

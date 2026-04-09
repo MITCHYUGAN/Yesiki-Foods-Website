@@ -12,8 +12,6 @@ const Menu = () => {
   const [category, setCategory] = useState("all");
   const { cart, setCart } = useContext(CartContext);
 
-  const [total, setTotal] = useState(0);
-
   // Filter menu By category
   const filterMenu = (category) => {
     if (category === "all") {
@@ -39,37 +37,23 @@ const Menu = () => {
     // Add item to cart if it doesn't exist
     if (!hasItemInCart) {
       setCart((prevItems) => [...prevItems, { ...item }]);
-      return // Stop running the function here when it exist
+      return; // Stop running the function here when it exist
     }
 
     // Increase the quantity of the particular item if it already exist
     const newArrayAfterIncreasingQuantity = cart.map((cartItem) => {
       if (cartItem.name === item.name) {
-        return {...item, quantity: cartItem.quantity + 1}
+        return { ...item, quantity: cartItem.quantity + 1 };
       }
-      return cartItem
-    })
+      return cartItem;
+    });
 
-    setCart(newArrayAfterIncreasingQuantity)
+    setCart(newArrayAfterIncreasingQuantity);
   };
-
-  // Calculate total prices of items in the cart
-  const calculateTotal = () => {
-    const sumTotal = cart.reduce((initialTotal, currentValue) => {
-      return initialTotal + currentValue.price;
-    }, 0);
-
-    console.log("Sum Total", sumTotal);
-    setTotal(sumTotal);
-  };
-
-  useEffect(() => {
-    calculateTotal();
-  }, [cart]);
 
   return (
     <div className="menuPage">
-      <Header cart={cart} setCart={setCart} total={total} />
+      <Header cart={cart} setCart={setCart} />
       <section className="menuHeader">
         <div className="menuHeaderTexts">
           <p className="menuHeaderTextsfirstP">OUR MENU</p>

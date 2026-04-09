@@ -231,7 +231,7 @@ header .headerSection .shopping_cart_button {
 }
 .cart {
   height: 100vh;
-  width: min(90%, 500px);
+  width: min(90%, 600px);
   background-color: white;
   position: fixed;
   top: 0;
