@@ -7,8 +7,8 @@ const Cart = ({ setCartActive, ifActive }) => {
   const { cart, setCart } = useContext(CartContext);
 
   const total = cart.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.price * currentValue.quantity
-  }, 0)
+    return accumulator + currentValue.price * currentValue.quantity;
+  }, 0);
 
   const increaseQuantity = (itemToIncreaseQuantity) => {
     const newCartItems = cart.map((item) => {
@@ -31,6 +31,18 @@ const Cart = ({ setCartActive, ifActive }) => {
 
     const filteredArray = newCartArray.filter((item) => item.quantity > 0);
     setCart(filteredArray);
+  };
+
+  const generateOrderMessage = () => {
+    console.log("Cart", cart);
+
+    const orderMessageFromCart = cart.map((item) => `- ${item.name} x${item.quantity} — ₦${item.price.toLocaleString()}`);
+    const message = `Hello YesikiFoods! I'd like to place an order: \n\n${orderMessageFromCart.join("\n")} \n\nTotal: ₦${total.toLocaleString()} \n\nName: [Customer fills this] \nAddress: [Customer fills this]`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/+2348159716937?text=${encodedMessage}`)
+
+    console.log(message);
   };
 
   return (
@@ -80,7 +92,9 @@ const Cart = ({ setCartActive, ifActive }) => {
             <h2>Total</h2>
             <p>₦{total.toLocaleString()}</p>
           </div>
-          <button className="cart_order_now_btn">Order Now</button>
+          <button className="cart_order_now_btn" onClick={generateOrderMessage}>
+            Order Now
+          </button>
         </section>
 
         {/* Where there are no items in cart: */}
