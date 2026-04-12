@@ -19,12 +19,12 @@ const HeroSection = () => {
                 <p>Make an order</p>
               </button>
             </Link>
-            <a href="/menu">
+            <Link to={"/menu"}>
               <button className="viewMenuBtn">
                 <img src={menu} alt="" />
                 <p>View our menu</p>
               </button>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="landingPageImg">

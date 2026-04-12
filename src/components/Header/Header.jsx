@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import { Link } from "react-router";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const { cart } = useContext(CartContext);
@@ -26,10 +27,11 @@ const Header = () => {
               <Link to={"/menu"}>Our Menu</Link>
             </li>
             <li>
-              <a href="">Bulk Orders</a>
+              <HashLink to={"/#bulkOrdersSection"}>Bulk Orders</HashLink>
+              <a href=""></a>
             </li>
             <li>
-              <a href="">Contact Us</a>
+              <HashLink smooth to={"/#questionSections"}>Contact Us</HashLink>
             </li>
           </ul>
           {/* <button className="navBtn">Order Now</button> */}

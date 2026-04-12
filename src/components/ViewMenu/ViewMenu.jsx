@@ -1,5 +1,6 @@
 import menu from "./Images/menu.svg";
 import threeplates from "./Images/threePlates.png";
+import { Link } from "react-router";
 
 const ViewMenu = () => {
   return (
@@ -11,12 +12,12 @@ const ViewMenu = () => {
             <span>Browse</span> our food menu now
           </h1>
           <p className="viewMenuContentsParagraph">See What&apos;s Cooking From rice dishes to grilled meats and cold drinks — browse our full menu, check prices, and order exactly what you want.</p>
-          <a href="/menu">
+          <Link to={"/menu"}>
             <button className="makeOrderBtn">
               <img src={menu} alt="Menu Icon" />
               <p>View our Menu</p>
             </button>
-          </a>
+          </Link>
         </div>
         <div className="viewMenuImg">
           <img src={threeplates} alt="View Menu Img" />

@@ -4,7 +4,7 @@ import questionImg from "./Images/questionImg.png"
 
 const Question = () =>{
     return(
-        <section className="questionSections">
+        <section className="questionSections" id="questionSections">
             <div className="question">
                 <div className="questionContents">
                     <h1>Got Questions, Hit us up right away!</h1>

@@ -1095,6 +1095,9 @@ header .headerSection .shopping_cart_button {
   font-size: 20px;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+.menuPage .menuContent .all_items .item .item_content .item_price {
+  font-family: "Inter", sans-serif;
+}
 .menuPage .menuContent .all_items .item .item_content .item_buttons {
   display: flex;
   width: 100%;

@@ -3,7 +3,7 @@ import bulkordersImg from "./Images/bulkordersImg.png";
 
 const BulkOrders = () => {
   return (
-    <section className="bulkOrdersSection">
+    <section className="bulkOrdersSection" id="bulkOrdersSection">
       <div className="bulkOrders">
         <div className="bulkOrdersImg">
           <img src={bulkordersImg} alt="" />
