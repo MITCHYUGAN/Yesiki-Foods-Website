@@ -34,7 +34,10 @@ const Cart = ({ setCartActive, ifActive }) => {
   };
 
   const generateOrderMessage = () => {
-    console.log("Cart", cart);
+    if (cart.length === 0) {
+      alert("Cannot place order. Cart is empty")
+      return
+    }
 
     const orderMessageFromCart = cart.map((item) => `- ${item.name} x${item.quantity} — ₦${item.price.toLocaleString()}`);
     const message = `Hello YesifikFoods! I'd like to place an order: \n\n${orderMessageFromCart.join("\n")} \n\nTotal: ₦${total.toLocaleString()} \n\nName: [Customer fills this] \nAddress: [Customer fills this]`;
@@ -42,7 +45,7 @@ const Cart = ({ setCartActive, ifActive }) => {
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/+2348159716937?text=${encodedMessage}`)
 
-    console.log(message);
+    // console.log(message);
   };
 
   return (

@@ -258,9 +258,10 @@ header .headerSection .shopping_cart_button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
 }
 .cart .cart_content .cart_items .cart_item .cart_item_img {
-  width: 100px;
+  width: 80px;
   border-radius: 8px;
 }
 .cart .cart_content .cart_items .cart_item .cart_item_img img {
@@ -271,10 +272,6 @@ header .headerSection .shopping_cart_button {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-.cart .cart_content .cart_items .cart_item .cart_item_texts .cart_item_price .quantity_on_price {
-  font-size: 11px;
-  color: #651fc5;
 }
 .cart .cart_content .cart_items .cart_item .cart_item_btns {
   display: flex;
