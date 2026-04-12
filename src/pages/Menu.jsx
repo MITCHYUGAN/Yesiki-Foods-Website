@@ -57,7 +57,7 @@ const Menu = () => {
       <section className="menuHeader">
         <div className="menuHeaderTexts">
           <p className="menuHeaderTextsfirstP">OUR MENU</p>
-          <h1 className="menuHeaderh1">YesikiFoods Menu</h1>
+          <h1 className="menuHeaderh1">YesifikFoods Menu</h1>
           <p className="menuHeaderTextsP">Fresh, Nigerian-inspired meals delivered with love</p>
         </div>
       </section>

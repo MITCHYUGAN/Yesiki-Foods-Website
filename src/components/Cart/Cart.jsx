@@ -37,7 +37,7 @@ const Cart = ({ setCartActive, ifActive }) => {
     console.log("Cart", cart);
 
     const orderMessageFromCart = cart.map((item) => `- ${item.name} x${item.quantity} — ₦${item.price.toLocaleString()}`);
-    const message = `Hello YesikiFoods! I'd like to place an order: \n\n${orderMessageFromCart.join("\n")} \n\nTotal: ₦${total.toLocaleString()} \n\nName: [Customer fills this] \nAddress: [Customer fills this]`;
+    const message = `Hello YesifikFoods! I'd like to place an order: \n\n${orderMessageFromCart.join("\n")} \n\nTotal: ₦${total.toLocaleString()} \n\nName: [Customer fills this] \nAddress: [Customer fills this]`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/+2348159716937?text=${encodedMessage}`)
