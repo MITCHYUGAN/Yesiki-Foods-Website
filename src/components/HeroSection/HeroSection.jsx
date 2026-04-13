@@ -3,6 +3,9 @@ import menu from "./Images/menu.svg";
 import landingPageImg from "./Images/landingPageImg.svg";
 import { Link } from "react-router";
 
+const orderMessage = `Hello YesifikFoods! I'd like to place an order: \n\n— [Your Order] \n\nName: [Customer fills this] \nDelivery Address: [Customer fills this]`
+const encodedMessage = encodeURIComponent(orderMessage)
+
 const HeroSection = () => {
   return (
     <section className="landingPageSection">
@@ -13,7 +16,7 @@ const HeroSection = () => {
           </h1>
           <p className="landingPageParagraph">From jollof rice to grilled chicken, we bring Lagos flavor straight to your door. No stress, no long wait — just good food, done right.</p>
           <div className="landingButtons">
-            <Link to={"https://wa.me/+2348159716937?text=Hello%20I%20have%20a%20question"} target="_blank">
+            <Link to={`https://wa.me/2348159716937?text=${encodedMessage}`} target="_blank">
               <button className="makeOrderBtn">
                 <img src={bellIcon} alt="" />
                 <p>Make an order</p>

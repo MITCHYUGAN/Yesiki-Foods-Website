@@ -29,9 +29,9 @@ const Footer = () => {
           <h2>Reach Us</h2>
           <ul>
             <li>
-              <a href="https://wa.me/YOURNUMBER?text=Hello%20YesifikFoods!%20I%27d%20like%20to%20place%20an%20order" target="_blank" rel="noreferrer">
+              <Link to="https://wa.me/2348159716937" target="_blank">
                 WhatsApp
-              </a>
+              </Link>
             </li>
             <li>
               <Link>Instagram</Link>

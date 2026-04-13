@@ -51,6 +51,15 @@ const Menu = () => {
     setCart(newArrayAfterIncreasingQuantity);
   };
 
+  // generateOrderMessage for particular item
+  const generateOrderMessage = (item) => {
+
+    const message = `Hello YesikiFoods! I'd like to place this order:\n\n- ${item.name} x${item.quantity} - ₦${item.price.toLocaleString()}\n\nName: [Customer fills this]\nAddress: [Customer fills this]`
+    const encodedMessage = encodeURIComponent(message)
+
+    window.open(`https://wa.me/2348159716937?text=${encodedMessage}`)
+  }
+
   return (
     <div className="menuPage">
       <Header cart={cart} setCart={setCart} />
@@ -100,7 +109,7 @@ const Menu = () => {
                       <h3 className="item_name">{item.name}</h3>
                       <p className="item_price">₦{item.price.toLocaleString()}</p>
                       <div className="item_buttons">
-                        <button className="item_order_now_btn">Order now</button>
+                        <button className="item_order_now_btn" onClick={() => generateOrderMessage(item)}>Order now</button>
                         <button className="item_add_to_cart_btn" title="Add to cart" onClick={() => addToCart(item)}>
                           <ShoppingCartIcon /> +{" "}
                         </button>
