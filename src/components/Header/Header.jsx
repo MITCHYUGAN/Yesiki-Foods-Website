@@ -31,14 +31,25 @@ const Header = () => {
               <a href=""></a>
             </li>
             <li>
-              <HashLink smooth to={"/#questionSections"}>Contact Us</HashLink>
+              <HashLink smooth to={"/#questionSections"}>
+                Contact Us
+              </HashLink>
             </li>
           </ul>
           {/* <button className="navBtn">Order Now</button> */}
         </nav>
 
-        <div>
-          <RxDropdownMenu
+        <div className="header_content">
+          <button className="shopping_cart_button" onClick={() => setCartActive("cartOpen")}>
+            <ShoppingCartIcon />
+            <h4 className="">
+              <span>CART </span>
+              <span>•</span>
+              <span>{cart.length}</span>
+            </h4>
+          </button>
+
+          <RxDropdownMenu size={35}
             className="menuBtn"
             onClick={() => {
               if (openNav === "navOpen") {
@@ -48,15 +59,6 @@ const Header = () => {
               }
             }}
           />
-
-          <button className="shopping_cart_button" onClick={() => setCartActive("cartOpen")}>
-            <ShoppingCartIcon />
-            <h4 className="">
-              <span>CART </span>
-              <span>•</span>
-              <span>{cart.length}</span>
-            </h4>
-          </button>
         </div>
 
         <Cart ifActive={ifActive} setCartActive={setCartActive} />

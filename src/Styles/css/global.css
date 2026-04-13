@@ -179,6 +179,11 @@ header .headerSection .nav ul li::after {
 header .headerSection .nav ul li:hover::after {
   width: 100%;
 }
+header .headerSection .header_content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
 header .headerSection .menuBtn {
   display: none;
   font-size: 30px;

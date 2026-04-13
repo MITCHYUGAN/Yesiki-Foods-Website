@@ -55,6 +55,13 @@ header {
       }
     }
 
+
+    .header_content{
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
     .menuBtn {
       display: none;
       font-size: 30px;
